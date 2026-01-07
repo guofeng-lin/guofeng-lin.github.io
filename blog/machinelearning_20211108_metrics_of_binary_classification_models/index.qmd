@@ -1,0 +1,47 @@
+---
+title: "Metrics of Binary Classification Models"
+author: "Guofeng Lin"
+description: |
+  Accuracy, Precision and Recall 
+date: "2021-11-08"
+categories: [Classification, Machine Learning]
+title-block-banner: false
+format: 
+  html:
+    toc: true
+    toc-depth: 2
+    code-fold: false
+    code-tools: false
+---
+
+# 二分类模型的评价指标
+## 前言-为什么要说评估指标这个事儿
+当我们在谈论分类模型好坏的时候，通常是采用一个测试数据集来测试模型的好坏。那么什么指标才能说明模型的好坏呢？可能有人会说，我直接看测试出来的正确率嘛，如果都正确那不就说明模型挺好的嘛。
+
+这个思路有一定的道理，只是在一些数据集有可能是失衡的，这种正确率的高低与数据集分布之间具有很强的关联性。比如说在1000个人当中，可能只有997人得过水痘（标记为1），而只有3个人没得过水痘（标记为0）。那在这种情况下，加入模型输出恒为1的时候，正确率依然高达99.7%。因此这种评价指标并不能很好地说明模型的泛化能力。
+## 基本定义
+首先来看下如下定义：
+1. True Positive (TP)，表示模型预测为正样本，实际为正样本。
+2. False Positive (FP)，表示模型预测为正样本，实际为负样本。
+3. False Negative (FN)，表示模型预测为负样本，实际为正样本。
+4. True Negative (TN)，表示模型预测为负样本，实际为负样本。
+
+## 准确率（Accuracy）
+准确率表示模型预测正确的正样本和负样本占所有样本的比例，公式为：
+$$
+acc=\frac{TP+TF}{TP+FP+TN+FN}
+$$
+
+
+这个就是前言中所讲的准确率指标，其中占比大的类别往往成为影响准确率的主要因素。
+## 精确率（Precision）
+精确率表示模型预测正确的正样本占所有预测为正样本的样本的比例，公式为：
+$$
+precision=\frac{TP}{TP+FP}
+$$
+
+## 召回率（Recall）
+召回率表示模型预测正确的正样本占所有实际正样本的比例，公式为：
+$$
+recall=\frac{TP}{TP+FN}
+$$

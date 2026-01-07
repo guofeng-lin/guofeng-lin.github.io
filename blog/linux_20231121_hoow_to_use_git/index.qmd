@@ -1,0 +1,135 @@
+---
+title: "How to use Git"
+description: |
+  common usage of Git. 
+author: "Guofeng Lin"
+date: "2023-11-20"
+categories: [Git]
+sidebar: false
+format: 
+  html:
+    toc: true
+    toc-depth: 2
+    code-fold: false
+    code-tools: false
+---
+
+
+# Git常见使用方法
+
+## 从本地仓库上传github的空仓库
+
+进入到想要同步的项目文件夹，按先后顺序执行以下操作：
+
+```bash
+# 初始化
+git init
+# add要上传的文件
+git add <your file>
+# 在Bash环境中commit信息使用单引号，Windows的cmd中commit信息使用双引号
+git commit -m "your commit"
+# 将主分支的命名从master改为main
+git branch -M main
+# 创建在Github上的远程仓库
+git remote add origin https://github.com/account/project.git
+# 将main分支push到远程仓库
+git push -u origin main
+```
+
+## 查看Git的分支
+
+```bash
+# 查看项目远程地址
+git remote -v
+
+# 查看远程项目的所有分支，红颜色分支代表当前所在的分支
+git branch -a
+
+# 查看历史提交信息
+git log
+
+# 查看当前分支修改了哪些内容
+git status
+```
+
+## 显示当前的配置信息
+
+```bash
+git config --list
+```
+
+## 查看标签信息
+
+```bash
+# 获取标签信息
+git fetch tags
+
+# 查看所有的标签
+git tag -l
+
+# 切换到对应的标签
+git checkout [target_tag]
+
+# 查看当前标签以及分支修改情况
+git status
+```
+
+## git使用代理加速
+
+设置使用代理
+将你的proxy server地址代替以下的127.0.0.1
+
+* http类型代理
+
+```bash
+git config --global http.proxy http://127.0.0.1:1080
+git config --global https.proxy https://127.0.0.1:1080
+```
+
+socks5类型代理
+
+```bash
+git config --global http.proxy ‘socks5://127.0.0.1:1080’
+git config --global https.proxy ‘socks5://127.0.0.1:1080’
+```
+
+p.s. 亲测发现本地配置http类型代理生效，配置socks5类型代理没有用。
+
+查看当前的代理配置
+
+```bash
+git config --global --get http.proxy
+git config --global --get https.proxy
+```
+
+取消设置代理
+
+```bash
+git config --global --unset http.proxy
+git config --global --unset https.proxy
+```
+
+仅对github.com
+
+```bash
+git config --global http.https://github.com.proxy socks5://127.0.0.1:1080
+```
+
+取消代理
+
+```bash
+git config --global --unset http.https://github.com.proxy
+```
+
+设置使用需账户密码验证的代理
+http类型代理
+
+```bash
+git config --global http.proxy http://username:passwd@127.0.0.1:1080
+```
+
+socks5类型代理
+
+```bash
+git config --global http.proxy socks5://username:passwd@127.0.0.1:1080
+```

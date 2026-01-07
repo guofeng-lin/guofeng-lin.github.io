@@ -1,0 +1,40 @@
+project:
+  type: website
+  output-dir: docs
+  
+website:
+  page-navigation: true
+  title: "Hello, I'm Guofeng"
+  site-url: https://guofeng-lin.github.io
+  favicon: misc/info/favicon.png
+  repo-url: https://github.com/guofeng-lin/guofeng-lin.github.io
+  repo-actions: [edit, issue]
+  
+  page-footer: 
+    left: "&copy; Copyright 2025, Guofeng Lin"
+    right: 
+      - icon: github
+        href: https://github.com/guofeng-lin/guofeng-lin.github.io
+
+  navbar: 
+    background: "#A9CCE3"
+    search: true
+    right: 
+      - text: "Publications"
+        href: publications/publications.qmd
+
+      - text: "Blog and Notes"
+        href: blog/blog.qmd
+        
+      - text: "About me"
+        href: about_me.qmd
+        
+      #- text: "CV"
+      #  href: misc/info/CV-CZ-2407.pdf
+
+
+format:
+  html:
+    theme: styles.scss
+
+

@@ -1,0 +1,32 @@
+---
+title: "Guofeng Lin"
+image: misc/info/photo.jpg
+about:
+  id: hero-heading
+  template: trestles
+  image-width: 12em
+  image-shape: round
+  links:
+    - icon: mailbox
+      text: iamguofenglin@gmail.com
+      href: mailto:iamguofenglin@gmail.com
+    - icon: github
+      text: guofeng-lin
+      href: https://github.com/guofeng-lin
+    - icon: linkedin
+      text: Guofeng Lin
+      href: https://www.linkedin.com/in/guofeng-lin-615857319/
+---
+
+::: {#hero-heading}
+
+Hello! 
+
+I am a software engineer and specialize in privacy-preserving computing.
+
+In 2014-2020, I studied in Nanjing University of Posts and Telecommunications and got my PhD degree in information network.
+
+Now I work in Nanjing LES information technology Co., Ltd as R&D specialist.
+
+With 5 years of hands-on experience, I have led design and development of large-scale systems. Possessing strong communication and coordination skills, I maintain effective collaboration with all stakeholders.
+:::

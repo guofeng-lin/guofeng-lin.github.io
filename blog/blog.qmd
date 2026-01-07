@@ -1,0 +1,63 @@
+---
+title: "Blog and notes"
+description: |
+  A place to store learnings and thoughts on public health, data science and open source development 
+listing:
+  - id: linux
+    fields: [title, date]
+    contents: 
+      - "linux_*/index.qmd"
+    type: table
+    grid-item-border: false
+    sort-ui: false
+    sort: "date desc"
+    filter-ui: false
+    categories: true
+    date-format: short
+    
+  - id: machinelearning
+    fields: [title, date]
+    contents: 
+      - "machinelearning_*/index.qmd"
+    type: table
+    grid-item-border: false
+    sort-ui: false
+    sort: "date desc"
+    filter-ui: false
+    categories: true
+    date-format: short
+
+  - id: cryptography
+    fields: [title, date]
+    contents: 
+      - "cryptography_*/index.qmd"
+    type: table
+    grid-item-border: false
+    sort-ui: false
+    sort: "date desc"
+    filter-ui: false
+    categories: true
+    date-format: short
+
+---
+
+### Linux
+
+::: {#linux}
+:::
+
+
+### Machine Learning
+
+::: {#machinelearning}
+:::
+
+
+### Cryptography
+
+This section is constantly being updated.
+
+::: {#cryptography}
+:::
+
+

@@ -1,0 +1,142 @@
+[
+  {
+    "objectID": "publications/publications.html",
+    "href": "publications/publications.html",
+    "title": "Publications",
+    "section": "",
+    "text": "Journal Papers\n\nG.Lin,L.Zhan,and D.Shen,“Review on Intelligent Operation and Maintenance of Air Traffic Control Automation Systems”,Journal of Xihua University,41(2):20-26,2022.\nG.Lin,Y.Xia,C.Ying,et.al,“F2P-ABS:A Fast and Secure Attribute-Based Signature for MobilePlatform s”,Security and Communication Networks,2019:1-12,2022.\nG.Lin,L.You,B.Hu,et.al,“A Coordinated ciphertext policy attribute-based PHR access control with user accountability”, KSII Transactions on Internet & Information Systems,12(4),pp.1832-1853,2018.\nG.Lin,H.Hong,and Z.Sun,“A Collaborative Key Management Protocol in Ciphertext Policy Attribute-Based Encryption for Cloud Data Sharing”,IEEE Access,5,pp. 9464-9475,2017.\nJ.Xu,H.Hong,G.Lin,et.al,“A new inter-domain information sharing smart system based on ABSES in SDN”, IEEE Access,6,pp.12790-12799,2018.\nY.Xia,H.Hong,G.Lin,et.al,“A secure and efficient cloud resource allocation scheme with trust evaluation mechanism based on combination double auction”,KSII Transactions on Internet & Information Systems,11(9),pp.4197-4219,2017.\n\n\n\nConference Papers\n\nL.Zhou,H.Zhang,G.Lin,et.al,“The Improvement of Air Traffic Control Automation System:Exploration and Application of Decentralized Multi-Level Architecture”,in Proc.2023 IEEE 5thInternational Conference on Civil Aviation Safety and Information Technology,2023,pp.486-493.\nG.Lin,C.Ying,S.Tan,et.al,“ARP-CP-ABE: toward efficient, secure, and flexible access control for personal health record systems”,in Proc. 4th IEEE Cyber Science and Technology Congress,2018,pp.54-61.\nG.Lin,H.Hong,Y.Xia,et.al,“An Expressive, Lightweight and Secure Construction of Key Policy Attribute-Based Cloud Data Sharing Access Control”,in Proc. 2017 International Conference on Cloud Technology and Communication Engineering,2017,pp.66-73."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Guofeng Lin",
+    "section": "",
+    "text": "iamguofenglin@gmail.com\n  \n  \n    \n     guofeng-lin\n  \n  \n    \n     Guofeng Lin\n  \n\n  \n  \nHello!\nI am a software engineer and specialize in privacy-preserving computing.\nIn 2014-2020, I studied in Nanjing University of Posts and Telecommunications and got my PhD degree in information network.\nNow I work in Nanjing LES information technology Co., Ltd as R&D specialist.\nWith 5 years of hands-on experience, I have led design and development of large-scale systems. Possessing strong communication and coordination skills, I maintain effective collaboration with all stakeholders."
+  },
+  {
+    "objectID": "blog/machinelearning_20211108_metrics_of_binary_classification_models/index.html",
+    "href": "blog/machinelearning_20211108_metrics_of_binary_classification_models/index.html",
+    "title": "Metrics of Binary Classification Models",
+    "section": "",
+    "text": "当我们在谈论分类模型好坏的时候，通常是采用一个测试数据集来测试模型的好坏。那么什么指标才能说明模型的好坏呢？可能有人会说，我直接看测试出来的正确率嘛，如果都正确那不就说明模型挺好的嘛。\n这个思路有一定的道理，只是在一些数据集有可能是失衡的，这种正确率的高低与数据集分布之间具有很强的关联性。比如说在1000个人当中，可能只有997人得过水痘（标记为1），而只有3个人没得过水痘（标记为0）。那在这种情况下，加入模型输出恒为1的时候，正确率依然高达99.7%。因此这种评价指标并不能很好地说明模型的泛化能力。 ## 基本定义 首先来看下如下定义： 1. True Positive (TP)，表示模型预测为正样本，实际为正样本。 2. False Positive (FP)，表示模型预测为正样本，实际为负样本。 3. False Negative (FN)，表示模型预测为负样本，实际为正样本。 4. True Negative (TN)，表示模型预测为负样本，实际为负样本。\n\n\n\n准确率表示模型预测正确的正样本和负样本占所有样本的比例，公式为： \\[\nacc=\\frac{TP+TF}{TP+FP+TN+FN}\n\\]\n这个就是前言中所讲的准确率指标，其中占比大的类别往往成为影响准确率的主要因素。 ## 精确率（Precision） 精确率表示模型预测正确的正样本占所有预测为正样本的样本的比例，公式为： \\[\nprecision=\\frac{TP}{TP+FP}\n\\]\n\n\n\n召回率表示模型预测正确的正样本占所有实际正样本的比例，公式为： \\[\nrecall=\\frac{TP}{TP+FN}\n\\]"
+  },
+  {
+    "objectID": "blog/machinelearning_20211108_metrics_of_binary_classification_models/index.html#前言-为什么要说评估指标这个事儿",
+    "href": "blog/machinelearning_20211108_metrics_of_binary_classification_models/index.html#前言-为什么要说评估指标这个事儿",
+    "title": "Metrics of Binary Classification Models",
+    "section": "",
+    "text": "当我们在谈论分类模型好坏的时候，通常是采用一个测试数据集来测试模型的好坏。那么什么指标才能说明模型的好坏呢？可能有人会说，我直接看测试出来的正确率嘛，如果都正确那不就说明模型挺好的嘛。\n这个思路有一定的道理，只是在一些数据集有可能是失衡的，这种正确率的高低与数据集分布之间具有很强的关联性。比如说在1000个人当中，可能只有997人得过水痘（标记为1），而只有3个人没得过水痘（标记为0）。那在这种情况下，加入模型输出恒为1的时候，正确率依然高达99.7%。因此这种评价指标并不能很好地说明模型的泛化能力。 ## 基本定义 首先来看下如下定义： 1. True Positive (TP)，表示模型预测为正样本，实际为正样本。 2. False Positive (FP)，表示模型预测为正样本，实际为负样本。 3. False Negative (FN)，表示模型预测为负样本，实际为正样本。 4. True Negative (TN)，表示模型预测为负样本，实际为负样本。"
+  },
+  {
+    "objectID": "blog/machinelearning_20211108_metrics_of_binary_classification_models/index.html#准确率accuracy",
+    "href": "blog/machinelearning_20211108_metrics_of_binary_classification_models/index.html#准确率accuracy",
+    "title": "Metrics of Binary Classification Models",
+    "section": "",
+    "text": "准确率表示模型预测正确的正样本和负样本占所有样本的比例，公式为： \\[\nacc=\\frac{TP+TF}{TP+FP+TN+FN}\n\\]\n这个就是前言中所讲的准确率指标，其中占比大的类别往往成为影响准确率的主要因素。 ## 精确率（Precision） 精确率表示模型预测正确的正样本占所有预测为正样本的样本的比例，公式为： \\[\nprecision=\\frac{TP}{TP+FP}\n\\]"
+  },
+  {
+    "objectID": "blog/machinelearning_20211108_metrics_of_binary_classification_models/index.html#召回率recall",
+    "href": "blog/machinelearning_20211108_metrics_of_binary_classification_models/index.html#召回率recall",
+    "title": "Metrics of Binary Classification Models",
+    "section": "",
+    "text": "召回率表示模型预测正确的正样本占所有实际正样本的比例，公式为： \\[\nrecall=\\frac{TP}{TP+FN}\n\\]"
+  },
+  {
+    "objectID": "blog/blog.html",
+    "href": "blog/blog.html",
+    "title": "Blog and notes",
+    "section": "",
+    "text": "Linux\n\n\n\n\n\n\nTitle\n\n\n\nDate\n\n\n\n\n\n\n\n\nHow to use Git\n\n\n11/20/23\n\n\n\n\n\n\nNo matching items\n\n\n\nMachine Learning\n\n\n\n\n\n\nTitle\n\n\n\nDate\n\n\n\n\n\n\n\n\nMetrics of Binary Classification Models\n\n\n11/8/21\n\n\n\n\n\n\nNo matching items\n\n\n\nCryptography\nThis section is constantly being updated.\n\n\n\n\nTitle\nDate\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "about_me.html",
+    "href": "about_me.html",
+    "title": "Guofeng Lin",
+    "section": "",
+    "text": "iamguofenglin@gmail.com\n  \n  \n    \n     guofeng-lin\n  \n  \n    \n     Guofeng Lin\n  \n\n\n\nI am a software engineer and specialize in privacy-preserving computing.\nIn 2014-2020, I studied in Nanjing University of Posts and Telecommunications and got my PhD degree in information network.\nNow I work in Nanjing LES information technology Co., Ltd as R&D specialist.\nWith 5 years of hands-on experience, I have led design and development of large-scale systems. Possessing strong communication and coordination skills, I maintain effective collaboration with all stakeholders."
+  },
+  {
+    "objectID": "blog/linux_20231121_hoow_to_use_git/index.html",
+    "href": "blog/linux_20231121_hoow_to_use_git/index.html",
+    "title": "How to use Git",
+    "section": "",
+    "text": "进入到想要同步的项目文件夹，按先后顺序执行以下操作：\n# 初始化\ngit init\n# add要上传的文件\ngit add &lt;your file&gt;\n# 在Bash环境中commit信息使用单引号，Windows的cmd中commit信息使用双引号\ngit commit -m \"your commit\"\n# 将主分支的命名从master改为main\ngit branch -M main\n# 创建在Github上的远程仓库\ngit remote add origin https://github.com/account/project.git\n# 将main分支push到远程仓库\ngit push -u origin main\n\n\n\n# 查看项目远程地址\ngit remote -v\n\n# 查看远程项目的所有分支，红颜色分支代表当前所在的分支\ngit branch -a\n\n# 查看历史提交信息\ngit log\n\n# 查看当前分支修改了哪些内容\ngit status\n\n\n\ngit config --list\n\n\n\n# 获取标签信息\ngit fetch tags\n\n# 查看所有的标签\ngit tag -l\n\n# 切换到对应的标签\ngit checkout [target_tag]\n\n# 查看当前标签以及分支修改情况\ngit status\n\n\n\n设置使用代理 将你的proxy server地址代替以下的127.0.0.1\n\nhttp类型代理\n\ngit config --global http.proxy http://127.0.0.1:1080\ngit config --global https.proxy https://127.0.0.1:1080\nsocks5类型代理\ngit config --global http.proxy ‘socks5://127.0.0.1:1080’\ngit config --global https.proxy ‘socks5://127.0.0.1:1080’\np.s. 亲测发现本地配置http类型代理生效，配置socks5类型代理没有用。\n查看当前的代理配置\ngit config --global --get http.proxy\ngit config --global --get https.proxy\n取消设置代理\ngit config --global --unset http.proxy\ngit config --global --unset https.proxy\n仅对github.com\ngit config --global http.https://github.com.proxy socks5://127.0.0.1:1080\n取消代理\ngit config --global --unset http.https://github.com.proxy\n设置使用需账户密码验证的代理 http类型代理\ngit config --global http.proxy http://username:passwd@127.0.0.1:1080\nsocks5类型代理\ngit config --global http.proxy socks5://username:passwd@127.0.0.1:1080"
+  },
+  {
+    "objectID": "blog/linux_20231121_hoow_to_use_git/index.html#从本地仓库上传github的空仓库",
+    "href": "blog/linux_20231121_hoow_to_use_git/index.html#从本地仓库上传github的空仓库",
+    "title": "How to use Git",
+    "section": "",
+    "text": "进入到想要同步的项目文件夹，按先后顺序执行以下操作：\n# 初始化\ngit init\n# add要上传的文件\ngit add &lt;your file&gt;\n# 在Bash环境中commit信息使用单引号，Windows的cmd中commit信息使用双引号\ngit commit -m \"your commit\"\n# 将主分支的命名从master改为main\ngit branch -M main\n# 创建在Github上的远程仓库\ngit remote add origin https://github.com/account/project.git\n# 将main分支push到远程仓库\ngit push -u origin main"
+  },
+  {
+    "objectID": "blog/linux_20231121_hoow_to_use_git/index.html#查看git的分支",
+    "href": "blog/linux_20231121_hoow_to_use_git/index.html#查看git的分支",
+    "title": "How to use Git",
+    "section": "",
+    "text": "# 查看项目远程地址\ngit remote -v\n\n# 查看远程项目的所有分支，红颜色分支代表当前所在的分支\ngit branch -a\n\n# 查看历史提交信息\ngit log\n\n# 查看当前分支修改了哪些内容\ngit status"
+  },
+  {
+    "objectID": "blog/linux_20231121_hoow_to_use_git/index.html#显示当前的配置信息",
+    "href": "blog/linux_20231121_hoow_to_use_git/index.html#显示当前的配置信息",
+    "title": "How to use Git",
+    "section": "",
+    "text": "git config --list"
+  },
+  {
+    "objectID": "blog/linux_20231121_hoow_to_use_git/index.html#查看标签信息",
+    "href": "blog/linux_20231121_hoow_to_use_git/index.html#查看标签信息",
+    "title": "How to use Git",
+    "section": "",
+    "text": "# 获取标签信息\ngit fetch tags\n\n# 查看所有的标签\ngit tag -l\n\n# 切换到对应的标签\ngit checkout [target_tag]\n\n# 查看当前标签以及分支修改情况\ngit status"
+  },
+  {
+    "objectID": "blog/linux_20231121_hoow_to_use_git/index.html#git使用代理加速",
+    "href": "blog/linux_20231121_hoow_to_use_git/index.html#git使用代理加速",
+    "title": "How to use Git",
+    "section": "",
+    "text": "设置使用代理 将你的proxy server地址代替以下的127.0.0.1\n\nhttp类型代理\n\ngit config --global http.proxy http://127.0.0.1:1080\ngit config --global https.proxy https://127.0.0.1:1080\nsocks5类型代理\ngit config --global http.proxy ‘socks5://127.0.0.1:1080’\ngit config --global https.proxy ‘socks5://127.0.0.1:1080’\np.s. 亲测发现本地配置http类型代理生效，配置socks5类型代理没有用。\n查看当前的代理配置\ngit config --global --get http.proxy\ngit config --global --get https.proxy\n取消设置代理\ngit config --global --unset http.proxy\ngit config --global --unset https.proxy\n仅对github.com\ngit config --global http.https://github.com.proxy socks5://127.0.0.1:1080\n取消代理\ngit config --global --unset http.https://github.com.proxy\n设置使用需账户密码验证的代理 http类型代理\ngit config --global http.proxy http://username:passwd@127.0.0.1:1080\nsocks5类型代理\ngit config --global http.proxy socks5://username:passwd@127.0.0.1:1080"
+  },
+  {
+    "objectID": "dev/short_bio.html",
+    "href": "dev/short_bio.html",
+    "title": "Hello, I'm Guofeng",
+    "section": "",
+    "text": "Guofeng Lin received the B.S. degree in electronic information engineering from Nantong University, China, in 2013. He received the Ph.D. degree in Information Network from Nanjing University of Posts and Telecommunications, China, in 2020. He is now working as research and development specialist in Nanjing LES Information Technology Co., Ltd. His primary research interests are in cryptography, data security and data science."
+  },
+  {
+    "objectID": "misc/literature.html",
+    "href": "misc/literature.html",
+    "title": "Hello, I'm Guofeng",
+    "section": "",
+    "text": "antibiotics stewardship\ninfections (community, hospital)\nelectronic health records\nquality assurance: prescripton and use"
+  },
+  {
+    "objectID": "misc/literature.html#ab-x-ehr",
+    "href": "misc/literature.html#ab-x-ehr",
+    "title": "Hello, I'm Guofeng",
+    "section": "AB x EHR",
+    "text": "AB x EHR\nMoehring 2021, EHR identify AB use among hospitalized patients\nReenggli 2021: assess EHR conversion into AB stewardship indicators\nCairns 2021: integrate AB stewardship with EHR in australia\nJenkins 2022: AB stewardship using electornic prescribing systems, review of intervention and outcome measures\nKuijpers 2024, excessive length of AB duration for HAI, support AB stewardship high relevance"
+  },
+  {
+    "objectID": "misc/literature.html#ehr-doctor-experience-system-design",
+    "href": "misc/literature.html#ehr-doctor-experience-system-design",
+    "title": "Hello, I'm Guofeng",
+    "section": "EHR doctor experience, system design",
+    "text": "EHR doctor experience, system design\nOstrer 2023, real time benefit tools must be designed to serve both clinicians and patients. mentions burden\nKawamoto 2019 Association of EHR add-on app for neonatal bilirubin management, physician efficiency and care quality. Good system and add-on can save clinician time and improve patient care.\nTsai 2020, EHR implementation, barriers to adoption and use high relevance\nOverhage 2020, time spent using EHR\n\nburnout\nTajirian 2020, influence of EHR on physician burnout high relevance\nKhairat 2020, EHR use with physician fatigue and efficiency\nKroth 2019, factors of EHR design and use for physician stress and burnout high relevance\nMelnick 2020, EHR usability, task load and burnout high relevance\nHilliard 2020, factors associated with burnout\nMore on this topic\nhttps://www.sciencedirect.com/science/article/abs/pii/S0897189718301356\nhttps://journals.sagepub.com/doi/full/10.1177/20552076231220241\nhttps://jamanetwork.com/journals/jamanetworkopen/article-abstract/2778909\n\n\nDesign\nGascon 2013 the process of designing a EHR lab request module\nTorres 2017, effect of EHR design on documentation and compliance high relevance"
+  },
+  {
+    "objectID": "misc/literature.html#ehr-data-quality-use-for-prediction-model-development",
+    "href": "misc/literature.html#ehr-data-quality-use-for-prediction-model-development",
+    "title": "Hello, I'm Guofeng",
+    "section": "EHR data quality, use for prediction model development",
+    "text": "EHR data quality, use for prediction model development\n\nerror\nbell 2020\nhttps://www.sciencedirect.com/science/article/abs/pii/S2213076420300439\nLi 2024, comparison of error reporting systems. 82% undetected, 90% had no corresponding incident report, some errors not reported at all\nWestbrook 2020, changes in medication administration error rates, associated with EHR\nGildon 2019, impact of EHR on prescribing errors in pediatric clinics. introduction is relevant for pointing out the need for well designed system\nGinzburg 2018, use clinical decision support within EHR to reduce incorrect prescribing for acute sinusitis. shows prompt for physicians to fill in reason for why AB is required high relevance\n\n\nbias\nGianfrancesco 2018, potential biases in ML algorithms using EHR data. Existing EHR disparities should not be amplified by thoughtless or excess reliance on machines.\nAgniel 2018, biases in EHR due to process within the healthcare system. healthcare processes must be addressed in the analysis of observational health data, context is important. high relevance\nBower, biases in EHR based surveillance of cardiovascular disease risk\nHarding2024, addressing common sources of bias in type 2 diabetes following covid, using EHR\nBica 2020, current and future methods to address underlying challenges from EHR to treatment effects mid relevance to manuscript, but important to myself\nDesai 2020, prediction using admin EHR, hear failure"
+  },
+  {
+    "objectID": "misc/literature.html#ab-stewardship-not-so-relevant",
+    "href": "misc/literature.html#ab-stewardship-not-so-relevant",
+    "title": "Hello, I'm Guofeng",
+    "section": "AB stewardship (not so relevant)",
+    "text": "AB stewardship (not so relevant)\nRenggli 2021: consumption of anti-meticillin resistant staphylococcus aureus antibiotics in Swiss hospitals is associateed with antibiotic stewardship measures\nVaughn 2021: AB overuse and stewardship at hospital discharge\nGraber 2019: electronic tools to decrease AB use"
+  }
+]
