@@ -1,7 +1,7 @@
 ---
-title: "Blog and notes"
+title: "Blog and Notes"
 description: |
-  A place to store learnings and thoughts on public health, data science and open source development 
+  A place to store learnings and thoughts. 
 listing:
   - id: linux
     fields: [title, date]
