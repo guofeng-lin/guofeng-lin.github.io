@@ -42,11 +42,25 @@
     "text": "召回率表示模型预测正确的正样本占所有实际正样本的比例，公式为： \\[\nrecall=\\frac{TP}{TP+FN}\n\\]"
   },
   {
-    "objectID": "blog/blog.html",
-    "href": "blog/blog.html",
-    "title": "Blog and Notes",
+    "objectID": "blog/linux_20201022_dconf_editor/index.html",
+    "href": "blog/linux_20201022_dconf_editor/index.html",
+    "title": "What is dconf-editor",
     "section": "",
-    "text": "Linux\n\n\n\n\n\n\nTitle\n\n\n\nDate\n\n\n\n\n\n\n\n\nHow to use Git\n\n\n11/20/23\n\n\n\n\n\n\nNo matching items\n\n\n\nMachine Learning\n\n\n\n\n\n\nTitle\n\n\n\nDate\n\n\n\n\n\n\n\n\nMetrics of Binary Classification Models\n\n\n11/8/21\n\n\n\n\n\n\nNo matching items\n\n\n\nCryptography\nThis section is constantly being updated.\n\n\n\n\nTitle\nDate\n\n\n\n\n\nNo matching items"
+    "text": "dconf-editor是一个非常简单易用的Ubuntu设置修改程序，它把大量的Ubuntu系统的设置可视化了。\n好处是显而易见的，以后想要修改一些设置的话就不用再百度搜索命令再手动输入，还担心命令是否有问题了（多么痛的领悟…）。\n\n\n安装方法如下：\n$ sudo apt install dconf-editor\n安装好之后打开也很方便：按下ALT+F2打开命令搜索框，输入dconf-editor即可。\n\n\n\n\n\n如果之前长期使用Mac或Windows的话，对Ubuntu 18.04桌面可能有些不适应，例如dock程序栏的show application按钮默认是放置在dock的末端。那么尤其是把dock防止在底部的时候，在屏幕右下才能找到这个遥远的show application。那么如何修改呢？\n方法如下：\n\n第一步，打开dconf-editor；\n第二步，按照以下路径找到 show-apps-at-top 这个选项，然后设置为 on："
+  },
+  {
+    "objectID": "blog/linux_20201022_dconf_editor/index.html#一安装方法",
+    "href": "blog/linux_20201022_dconf_editor/index.html#一安装方法",
+    "title": "What is dconf-editor",
+    "section": "",
+    "text": "安装方法如下：\n$ sudo apt install dconf-editor\n安装好之后打开也很方便：按下ALT+F2打开命令搜索框，输入dconf-editor即可。"
+  },
+  {
+    "objectID": "blog/linux_20201022_dconf_editor/index.html#二使用方法",
+    "href": "blog/linux_20201022_dconf_editor/index.html#二使用方法",
+    "title": "What is dconf-editor",
+    "section": "",
+    "text": "如果之前长期使用Mac或Windows的话，对Ubuntu 18.04桌面可能有些不适应，例如dock程序栏的show application按钮默认是放置在dock的末端。那么尤其是把dock防止在底部的时候，在屏幕右下才能找到这个遥远的show application。那么如何修改呢？\n方法如下：\n\n第一步，打开dconf-editor；\n第二步，按照以下路径找到 show-apps-at-top 这个选项，然后设置为 on："
   },
   {
     "objectID": "about_me.html",
@@ -54,6 +68,13 @@
     "title": "Guofeng Lin",
     "section": "",
     "text": "iamguofenglin@gmail.com\n  \n  \n    \n     guofeng-lin\n  \n  \n    \n     Guofeng Lin\n  \n\n\n\nI am a software engineer and specialize in privacy-preserving computing.\nIn 2014-2020, I studied in Nanjing University of Posts and Telecommunications and got my PhD degree in information network.\nNow I work in Nanjing LES information technology Co., Ltd as R&D specialist.\nWith 5 years of hands-on experience, I have led design and development of large-scale systems. Possessing strong communication and coordination skills, I maintain effective collaboration with all stakeholders."
+  },
+  {
+    "objectID": "blog/blog.html",
+    "href": "blog/blog.html",
+    "title": "Blog and Notes",
+    "section": "",
+    "text": "Linux\n\n\n\n\n\n\nTitle\n\n\n\nDate\n\n\n\n\n\n\n\n\nHow to use Git\n\n\n11/20/23\n\n\n\n\n\n\nWhat is dconf-editor\n\n\n10/22/20\n\n\n\n\n\n\nNo matching items\n\n\n\nMachine Learning\n\n\n\n\n\n\nTitle\n\n\n\nDate\n\n\n\n\n\n\n\n\nMetrics of Binary Classification Models\n\n\n11/8/21\n\n\n\n\n\n\nNo matching items\n\n\n\nCryptography\nThis section is constantly being updated.\n\n\n\n\nTitle\nDate\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "blog/linux_20231121_hoow_to_use_git/index.html",

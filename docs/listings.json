@@ -3,6 +3,7 @@
     "listing": "/blog/blog.html",
     "items": [
       "/blog/linux_20231121_hoow_to_use_git/index.html",
+      "/blog/linux_20201022_dconf_editor/index.html",
       "/blog/machinelearning_20211108_metrics_of_binary_classification_models/index.html"
     ]
   }

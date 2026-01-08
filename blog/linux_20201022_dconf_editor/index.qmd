@@ -1,0 +1,43 @@
+---
+title: "What is dconf-editor"
+description: |
+  use dconf-editor to make your ubuntu destop more friendly. 
+author: "Guofeng Lin"
+date: "2020-10-22"
+categories: [Linux, Ubuntu]
+sidebar: false
+format: 
+  html:
+    toc: true
+    toc-depth: 2
+    code-fold: false
+    code-tools: false
+---
+
+# What is dconf-editor
+
+dconf-editor是一个非常简单易用的Ubuntu设置修改程序，它把大量的Ubuntu系统的设置可视化了。
+
+好处是显而易见的，以后想要修改一些设置的话就不用再百度搜索命令再手动输入，还担心命令是否有问题了（多么痛的领悟...）。
+
+## 一、安装方法
+
+安装方法如下：
+
+```bash
+$ sudo apt install dconf-editor
+```
+
+安装好之后打开也很方便：按下ALT+F2打开命令搜索框，输入dconf-editor即可。
+
+## 二、使用方法
+
+### 案例一
+
+如果之前长期使用Mac或Windows的话，对Ubuntu 18.04桌面可能有些不适应，例如dock程序栏的show application按钮默认是放置在dock的末端。那么尤其是把dock防止在底部的时候，在屏幕右下才能找到这个遥远的show application。那么如何修改呢？
+
+方法如下：
+
+* 第一步，打开dconf-editor；
+* 第二步，按照以下路径找到 `show-apps-at-top` 这个选项，然后设置为 `on`：
+
