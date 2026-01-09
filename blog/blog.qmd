@@ -30,7 +30,7 @@ listing:
   - id: cryptography
     fields: [title, date]
     contents: 
-      - "cryptography_*/index.qmd"
+      - "crypto_*/index.qmd"
     type: table
     grid-item-border: false
     sort-ui: false
