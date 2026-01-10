@@ -5,6 +5,8 @@ title: "Publications"
 
 ### Journal Papers
 
+- **Z.Gu, C.Zhou, and G.Lin, "A temporal shift reconstruction network for compressive video sensing", IET Computer Vision, 18.4 (2024): 448-457, 2024.**
+
 - **G.Lin, L.Zhan, and D.Shen, "Review on Intelligent Operation and Maintenance of Air Traffic Control Automation Systems", Journal of Xihua University, 41(2):20-26, 2022.**
 
 - **G.Lin, Y.Xia, C.Ying, et.al,"F2P-ABS:A Fast and Secure Attribute-Based Signature for MobilePlatform s",Security and Communication Networks,2019:1-12,2022.**
