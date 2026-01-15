@@ -1,5 +1,5 @@
 ---
-title: "What is dconf-editor"
+title: "What Is DCONF-EDITOR?"
 description: |
   use dconf-editor to make your ubuntu destop more friendly. 
 author: "Guofeng Lin"
@@ -13,8 +13,6 @@ format:
     code-fold: false
     code-tools: false
 ---
-
-# What is dconf-editor
 
 dconf-editor是一个非常简单易用的Ubuntu设置修改程序，它把大量的Ubuntu系统的设置可视化了。
 

@@ -42,32 +42,95 @@
     "text": "召回率表示模型预测正确的正样本占所有实际正样本的比例，公式为： \\[\nrecall=\\frac{TP}{TP+FN}\n\\]"
   },
   {
-    "objectID": "blog/linux_20201022_dconf_editor/index.html",
-    "href": "blog/linux_20201022_dconf_editor/index.html",
-    "title": "What is dconf-editor",
+    "objectID": "blog/linux_20231121_hoow_to_use_git/index.html",
+    "href": "blog/linux_20231121_hoow_to_use_git/index.html",
+    "title": "How To Use Git?",
     "section": "",
-    "text": "dconf-editor是一个非常简单易用的Ubuntu设置修改程序，它把大量的Ubuntu系统的设置可视化了。\n好处是显而易见的，以后想要修改一些设置的话就不用再百度搜索命令再手动输入，还担心命令是否有问题了（多么痛的领悟…）。\n\n\n安装方法如下：\n$ sudo apt install dconf-editor\n安装好之后打开也很方便：按下ALT+F2打开命令搜索框，输入dconf-editor即可。\n\n\n\n\n\n如果之前长期使用Mac或Windows的话，对Ubuntu 18.04桌面可能有些不适应，例如dock程序栏的show application按钮默认是放置在dock的末端。那么尤其是把dock防止在底部的时候，在屏幕右下才能找到这个遥远的show application。那么如何修改呢？\n方法如下：\n\n第一步，打开dconf-editor；\n第二步，按照以下路径找到 show-apps-at-top 这个选项，然后设置为 on："
+    "text": "进入到想要同步的项目文件夹，按先后顺序执行以下操作：\n# 初始化\ngit init\n# add要上传的文件\ngit add &lt;your file&gt;\n# 在Bash环境中commit信息使用单引号，Windows的cmd中commit信息使用双引号\ngit commit -m \"your commit\"\n# 将主分支的命名从master改为main\ngit branch -M main\n# 创建在Github上的远程仓库\ngit remote add origin https://github.com/account/project.git\n# 将main分支push到远程仓库\ngit push -u origin main\n\n\n\n# 查看项目远程地址\ngit remote -v\n\n# 查看远程项目的所有分支，红颜色分支代表当前所在的分支\ngit branch -a\n\n# 查看历史提交信息\ngit log\n\n# 查看当前分支修改了哪些内容\ngit status\n\n\n\ngit config --list\n\n\n\n# 获取标签信息\ngit fetch tags\n\n# 查看所有的标签\ngit tag -l\n\n# 切换到对应的标签\ngit checkout [target_tag]\n\n# 查看当前标签以及分支修改情况\ngit status\n\n\n\n设置使用代理 将你的proxy server地址代替以下的127.0.0.1\n\nhttp类型代理\n\ngit config --global http.proxy http://127.0.0.1:1080\ngit config --global https.proxy https://127.0.0.1:1080\nsocks5类型代理\ngit config --global http.proxy ‘socks5://127.0.0.1:1080’\ngit config --global https.proxy ‘socks5://127.0.0.1:1080’\np.s. 亲测发现本地配置http类型代理生效，配置socks5类型代理没有用。\n查看当前的代理配置\ngit config --global --get http.proxy\ngit config --global --get https.proxy\n取消设置代理\ngit config --global --unset http.proxy\ngit config --global --unset https.proxy\n仅对github.com\ngit config --global http.https://github.com.proxy socks5://127.0.0.1:1080\n取消代理\ngit config --global --unset http.https://github.com.proxy\n设置使用需账户密码验证的代理 http类型代理\ngit config --global http.proxy http://username:passwd@127.0.0.1:1080\nsocks5类型代理\ngit config --global http.proxy socks5://username:passwd@127.0.0.1:1080"
   },
   {
-    "objectID": "blog/linux_20201022_dconf_editor/index.html#一安装方法",
-    "href": "blog/linux_20201022_dconf_editor/index.html#一安装方法",
-    "title": "What is dconf-editor",
+    "objectID": "blog/linux_20231121_hoow_to_use_git/index.html#从本地仓库上传github的空仓库",
+    "href": "blog/linux_20231121_hoow_to_use_git/index.html#从本地仓库上传github的空仓库",
+    "title": "How To Use Git?",
     "section": "",
-    "text": "安装方法如下：\n$ sudo apt install dconf-editor\n安装好之后打开也很方便：按下ALT+F2打开命令搜索框，输入dconf-editor即可。"
+    "text": "进入到想要同步的项目文件夹，按先后顺序执行以下操作：\n# 初始化\ngit init\n# add要上传的文件\ngit add &lt;your file&gt;\n# 在Bash环境中commit信息使用单引号，Windows的cmd中commit信息使用双引号\ngit commit -m \"your commit\"\n# 将主分支的命名从master改为main\ngit branch -M main\n# 创建在Github上的远程仓库\ngit remote add origin https://github.com/account/project.git\n# 将main分支push到远程仓库\ngit push -u origin main"
   },
   {
-    "objectID": "blog/linux_20201022_dconf_editor/index.html#二使用方法",
-    "href": "blog/linux_20201022_dconf_editor/index.html#二使用方法",
-    "title": "What is dconf-editor",
+    "objectID": "blog/linux_20231121_hoow_to_use_git/index.html#查看git的分支",
+    "href": "blog/linux_20231121_hoow_to_use_git/index.html#查看git的分支",
+    "title": "How To Use Git?",
     "section": "",
-    "text": "如果之前长期使用Mac或Windows的话，对Ubuntu 18.04桌面可能有些不适应，例如dock程序栏的show application按钮默认是放置在dock的末端。那么尤其是把dock防止在底部的时候，在屏幕右下才能找到这个遥远的show application。那么如何修改呢？\n方法如下：\n\n第一步，打开dconf-editor；\n第二步，按照以下路径找到 show-apps-at-top 这个选项，然后设置为 on："
+    "text": "# 查看项目远程地址\ngit remote -v\n\n# 查看远程项目的所有分支，红颜色分支代表当前所在的分支\ngit branch -a\n\n# 查看历史提交信息\ngit log\n\n# 查看当前分支修改了哪些内容\ngit status"
   },
   {
-    "objectID": "blog/blog.html",
-    "href": "blog/blog.html",
-    "title": "Blog and Notes",
+    "objectID": "blog/linux_20231121_hoow_to_use_git/index.html#显示当前的配置信息",
+    "href": "blog/linux_20231121_hoow_to_use_git/index.html#显示当前的配置信息",
+    "title": "How To Use Git?",
     "section": "",
-    "text": "Linux\n\n\n\n\n\n\nTitle\n\n\n\nDate\n\n\n\n\n\n\n\n\nHow to use Git\n\n\n11/20/23\n\n\n\n\n\n\nWhat is dconf-editor\n\n\n10/22/20\n\n\n\n\n\n\nNo matching items\n\n\n\nMachine Learning\n\n\n\n\n\n\nTitle\n\n\n\nDate\n\n\n\n\n\n\n\n\nMetrics of Binary Classification Models\n\n\n11/8/21\n\n\n\n\n\n\nNo matching items\n\n\n\nCryptography\nThis section is constantly being updated.\n\n\n\n\n\n\nTitle\n\n\n\nDate\n\n\n\n\n\n\n\n\nFuzzy Identity-Based Encryption\n\n\n12/1/23\n\n\n\n\n\n\nNo matching items"
+    "text": "git config --list"
+  },
+  {
+    "objectID": "blog/linux_20231121_hoow_to_use_git/index.html#查看标签信息",
+    "href": "blog/linux_20231121_hoow_to_use_git/index.html#查看标签信息",
+    "title": "How To Use Git?",
+    "section": "",
+    "text": "# 获取标签信息\ngit fetch tags\n\n# 查看所有的标签\ngit tag -l\n\n# 切换到对应的标签\ngit checkout [target_tag]\n\n# 查看当前标签以及分支修改情况\ngit status"
+  },
+  {
+    "objectID": "blog/linux_20231121_hoow_to_use_git/index.html#git使用代理加速",
+    "href": "blog/linux_20231121_hoow_to_use_git/index.html#git使用代理加速",
+    "title": "How To Use Git?",
+    "section": "",
+    "text": "设置使用代理 将你的proxy server地址代替以下的127.0.0.1\n\nhttp类型代理\n\ngit config --global http.proxy http://127.0.0.1:1080\ngit config --global https.proxy https://127.0.0.1:1080\nsocks5类型代理\ngit config --global http.proxy ‘socks5://127.0.0.1:1080’\ngit config --global https.proxy ‘socks5://127.0.0.1:1080’\np.s. 亲测发现本地配置http类型代理生效，配置socks5类型代理没有用。\n查看当前的代理配置\ngit config --global --get http.proxy\ngit config --global --get https.proxy\n取消设置代理\ngit config --global --unset http.proxy\ngit config --global --unset https.proxy\n仅对github.com\ngit config --global http.https://github.com.proxy socks5://127.0.0.1:1080\n取消代理\ngit config --global --unset http.https://github.com.proxy\n设置使用需账户密码验证的代理 http类型代理\ngit config --global http.proxy http://username:passwd@127.0.0.1:1080\nsocks5类型代理\ngit config --global http.proxy socks5://username:passwd@127.0.0.1:1080"
+  },
+  {
+    "objectID": "blog/crypto_20231201_FIBE/index.html",
+    "href": "blog/crypto_20231201_FIBE/index.html",
+    "title": "Fuzzy Identity-Based Encryption",
+    "section": "",
+    "text": "Paper: Sahai, Amit, and Brent Waters. “Fuzzy identity-based encryption.” Annual international conference on the theory and applications of cryptographic techniques. Berlin, Heidelberg: Springer Berlin Heidelberg, 2005."
+  },
+  {
+    "objectID": "blog/crypto_20231201_FIBE/index.html#preliminares",
+    "href": "blog/crypto_20231201_FIBE/index.html#preliminares",
+    "title": "Fuzzy Identity-Based Encryption",
+    "section": "Preliminares",
+    "text": "Preliminares\n\nLagrange interpolation\n给定\\(d\\)个点\\((x_0,y_0),(x_1,y_1),...,(x_{d-1},y_{d-1})\\)，可以决定一个\\(d-1\\)次多项式。该多项式可以表示为：\n\\[ q(x)=\\sum_{i=0}^{d-1}y_i\\delta_i(x) \\]\n其中，拉格朗日因子\\(\\delta_i(x)=\\prod_{j=0,j\\neq i}^{d-1}\\frac{x-x_j}{x_i-x_j}\\)\n\n\nShamir Secret Sharing\n将秘密\\(s\\)分割后共享给\\(n\\)个人，至少\\(k\\)个人组合后才可以恢复秘密\\(s\\)。分享方案：\n选取\\(k-1\\)次随机多项式\\(q(x)\\)并使得\\(q(0)=s\\)，计算\\((x_1,q(x_1)),(x_2,q(x_2)),...,(x_{n},q(x_{n}))\\)，将对应的\\(q(x_i)\\)分享给第i个用户。\n\\(k\\)个用户通过其秘密分片进行拉格朗日插值后恢复\\(q(x)\\)，进而计算出\\(q(0)\\)。"
+  },
+  {
+    "objectID": "blog/crypto_20231201_FIBE/index.html#setup",
+    "href": "blog/crypto_20231201_FIBE/index.html#setup",
+    "title": "Fuzzy Identity-Based Encryption",
+    "section": "Setup",
+    "text": "Setup\n\n生成pairing相关公共参数 \\(&lt;e, g, G_1, G_T,Z_r&gt;\\)。\n确定属性全集\\(U\\)为整数集合\\(\\{1, 2,..., |U|\\}\\)，以及系统门限值\\(d\\)。\n针对每个属性\\(i\\)选择随机数\\(t_i\\in Z_r\\)作为主密钥组件，计算\\(T_i=g^{t_i}\\)作为对应的公钥组件。\n选取随机数\\(y\\in Z_r\\)，并计算\\(Y=e(g,g)^{y}\\)。\n最终，系统主密钥\\(msk=\\langle t_1,t_2,...t_{|U|}, y \\rangle\\)，公钥\\(pk=\\langle T_1,T_2,...,T_{|U|},Y \\rangle\\)。"
+  },
+  {
+    "objectID": "blog/crypto_20231201_FIBE/index.html#key-generation",
+    "href": "blog/crypto_20231201_FIBE/index.html#key-generation",
+    "title": "Fuzzy Identity-Based Encryption",
+    "section": "Key Generation",
+    "text": "Key Generation\n\n随机选择一个\\(d-1\\)次多项式\\(q(x)\\)，使得\\(q(0)=y\\)。\n针对用户属性集合\\(S\\)中的每个属性\\(i\\)，计算\\(q(i)\\)，进一步计算\\(D_i=g^{\\frac{q(i)}{t_i}}\\)。\n用户私钥\\(sk= \\{D_i\\}_{i\\in S}\\)。"
+  },
+  {
+    "objectID": "blog/crypto_20231201_FIBE/index.html#encryption",
+    "href": "blog/crypto_20231201_FIBE/index.html#encryption",
+    "title": "Fuzzy Identity-Based Encryption",
+    "section": "Encryption",
+    "text": "Encryption\n\n选取随机数\\(s\\in Zr\\)，针对明文消息\\(M\\in G_T\\)，计算\\(E'=M\\cdot Y^s=M\\cdot e(g,g)^{ys}\\)。\n针对明文属性集合\\(W\\)中的每个属性\\(i\\)，计算\\(E_i={T_i}^s\\)。\n密文为\\(ct=\\langle E', \\{E_i\\}_{i\\in W} \\rangle\\)。"
+  },
+  {
+    "objectID": "blog/crypto_20231201_FIBE/index.html#decryption",
+    "href": "blog/crypto_20231201_FIBE/index.html#decryption",
+    "title": "Fuzzy Identity-Based Encryption",
+    "section": "Decryption",
+    "text": "Decryption\n\n如果用户属性集合\\(S\\)和明文属性集合\\(W\\)重合属性个数不小于\\(d\\)，可按如下方法解密。\n从所有重合属性中选取\\(d\\)个构成属性集合\\(I\\)。\n针对\\(I\\)中的每个属性\\(i\\)，计算\\(P_i = e(E_i, D_i)^{\\delta_i(0)}=e(g,g)^{sq(i)\\delta_i(0)}\\)，其中\\(\\delta_i(0)\\)是拉格朗日因子。\n\\(\\prod_{i\\in I} P_i = e(g,g)^{s\\sum_{i\\in I}q(i)\\delta_i(0)}=e(g,g)^{sy}\\)\n\\(E'/\\prod_{i\\in I} P_i = M\\)"
+  },
+  {
+    "objectID": "blog/crypto_20231201_FIBE/index.html#算法实现注意事项",
+    "href": "blog/crypto_20231201_FIBE/index.html#算法实现注意事项",
+    "title": "Fuzzy Identity-Based Encryption",
+    "section": "算法实现注意事项",
+    "text": "算法实现注意事项\n\n属性用整数表示。实际应用中通过索引表将每一个整数和一个字符串属性对应起来。\n多项式求值和拉格朗日插值在群Zr上进行，因此相应的int值在计算前要转换为Zr Element。\n对于重复使用的值，一定要记得使用getImmutable()或者duplicate()。尤其是在for循环中。"
   },
   {
     "objectID": "about_me.html",
@@ -77,95 +140,67 @@
     "text": "iamguofenglin@gmail.com\n  \n  \n    \n     guofeng-lin\n  \n  \n    \n     Guofeng Lin\n  \n\n\n\nI am a software engineer and specialize in privacy-preserving computing.\nIn 2014-2020, I studied in Nanjing University of Posts and Telecommunications and got my PhD degree in information network.\nNow I work in Nanjing LES information technology Co., Ltd as R&D specialist.\nWith 5 years of hands-on experience, I have led design and development of large-scale systems. Possessing strong communication and coordination skills, I maintain effective collaboration with all stakeholders."
   },
   {
-    "objectID": "blog/crypto_20231201_FIBE/index.html",
-    "href": "blog/crypto_20231201_FIBE/index.html",
-    "title": "Fuzzy Identity-Based Encryption",
+    "objectID": "blog/blog.html",
+    "href": "blog/blog.html",
+    "title": "Blog and Notes",
     "section": "",
-    "text": "Paper: Sahai, Amit, and Brent Waters. “Fuzzy identity-based encryption.” Annual international conference on the theory and applications of cryptographic techniques. Berlin, Heidelberg: Springer Berlin Heidelberg, 2005.\n\n\n\n\n给定\\(d\\)个点\\((x_0,y_0),(x_1,y_1),...,(x_{d-1},y_{d-1})\\)，可以决定一个\\(d-1\\)次多项式。该多项式可以表示为：\n\\[ q(x)=\\sum_{i=0}^{d-1}y_i\\delta_i(x) \\]\n其中，拉格朗日因子\\(\\delta_i(x)=\\prod_{j=0,j\\neq i}^{d-1}\\frac{x-x_j}{x_i-x_j}\\)\n\n\n\n将秘密\\(s\\)分割后共享给\\(n\\)个人，至少\\(k\\)个人组合后才可以恢复秘密\\(s\\)。分享方案：\n选取\\(k-1\\)次随机多项式\\(q(x)\\)并使得\\(q(0)=s\\)，计算\\((x_1,q(x_1)),(x_2,q(x_2)),...,(x_{n},q(x_{n}))\\)，将对应的\\(q(x_i)\\)分享给第i个用户。\n\\(k\\)个用户通过其秘密分片进行拉格朗日插值后恢复\\(q(x)\\)，进而计算出\\(q(0)\\)。\n\n\n\n\n\n生成pairing相关公共参数 \\(&lt;e, g, G_1, G_T,Z_r&gt;\\)。\n确定属性全集\\(U\\)为整数集合\\(\\{1, 2,..., |U|\\}\\)，以及系统门限值\\(d\\)。\n针对每个属性\\(i\\)选择随机数\\(t_i\\in Z_r\\)作为主密钥组件，计算\\(T_i=g^{t_i}\\)作为对应的公钥组件。\n选取随机数\\(y\\in Z_r\\)，并计算\\(Y=e(g,g)^{y}\\)。\n最终，系统主密钥\\(msk=\\langle t_1,t_2,...t_{|U|}, y \\rangle\\)，公钥\\(pk=\\langle T_1,T_2,...,T_{|U|},Y \\rangle\\)。\n\n\n\n\n\n随机选择一个\\(d-1\\)次多项式\\(q(x)\\)，使得\\(q(0)=y\\)。\n针对用户属性集合\\(S\\)中的每个属性\\(i\\)，计算\\(q(i)\\)，进一步计算\\(D_i=g^{\\frac{q(i)}{t_i}}\\)。\n用户私钥\\(sk= \\{D_i\\}_{i\\in S}\\)。\n\n\n\n\n\n选取随机数\\(s\\in Zr\\)，针对明文消息\\(M\\in G_T\\)，计算\\(E'=M\\cdot Y^s=M\\cdot e(g,g)^{ys}\\)。\n针对明文属性集合\\(W\\)中的每个属性\\(i\\)，计算\\(E_i={T_i}^s\\)。\n密文为\\(ct=\\langle E', \\{E_i\\}_{i\\in W} \\rangle\\)。\n\n\n\n\n\n如果用户属性集合\\(S\\)和明文属性集合\\(W\\)重合属性个数不小于\\(d\\)，可按如下方法解密。\n从所有重合属性中选取\\(d\\)个构成属性集合\\(I\\)。\n针对\\(I\\)中的每个属性\\(i\\)，计算\\(P_i = e(E_i, D_i)^{\\delta_i(0)}=e(g,g)^{sq(i)\\delta_i(0)}\\)，其中\\(\\delta_i(0)\\)是拉格朗日因子。\n\\(\\prod_{i\\in I} P_i = e(g,g)^{s\\sum_{i\\in I}q(i)\\delta_i(0)}=e(g,g)^{sy}\\)\n\\(E'/\\prod_{i\\in I} P_i = M\\)\n\n\n\n\n\n属性用整数表示。实际应用中通过索引表将每一个整数和一个字符串属性对应起来。\n多项式求值和拉格朗日插值在群Zr上进行，因此相应的int值在计算前要转换为Zr Element。\n对于重复使用的值，一定要记得使用getImmutable()或者duplicate()。尤其是在for循环中。"
+    "text": "Linux\n\n\n\n\n\n\nTitle\n\n\n\nDate\n\n\n\n\n\n\n\n\nHow To Use Git?\n\n\n11/20/23\n\n\n\n\n\n\nWhat Is DCONF-EDITOR?\n\n\n10/22/20\n\n\n\n\n\n\nNo matching items\n\n\n\nMachine Learning\n\n\n\n\n\n\nTitle\n\n\n\nDate\n\n\n\n\n\n\n\n\nMetrics of Binary Classification Models\n\n\n11/8/21\n\n\n\n\n\n\nHow To Manage Your ENVS in Jupyter\n\n\n7/21/21\n\n\n\n\n\n\nNo matching items\n\n\n\nCryptography\nThis section is constantly being updated.\n\n\n\n\n\n\nTitle\n\n\n\nDate\n\n\n\n\n\n\n\n\nFuzzy Identity-Based Encryption\n\n\n12/1/23\n\n\n\n\n\n\nNo matching items"
   },
   {
-    "objectID": "blog/crypto_20231201_FIBE/index.html#preliminares",
-    "href": "blog/crypto_20231201_FIBE/index.html#preliminares",
-    "title": "Fuzzy Identity-Based Encryption",
+    "objectID": "blog/linux_20201022_dconf_editor/index.html",
+    "href": "blog/linux_20201022_dconf_editor/index.html",
+    "title": "What Is DCONF-EDITOR?",
     "section": "",
-    "text": "给定\\(d\\)个点\\((x_0,y_0),(x_1,y_1),...,(x_{d-1},y_{d-1})\\)，可以决定一个\\(d-1\\)次多项式。该多项式可以表示为：\n\\[ q(x)=\\sum_{i=0}^{d-1}y_i\\delta_i(x) \\]\n其中，拉格朗日因子\\(\\delta_i(x)=\\prod_{j=0,j\\neq i}^{d-1}\\frac{x-x_j}{x_i-x_j}\\)\n\n\n\n将秘密\\(s\\)分割后共享给\\(n\\)个人，至少\\(k\\)个人组合后才可以恢复秘密\\(s\\)。分享方案：\n选取\\(k-1\\)次随机多项式\\(q(x)\\)并使得\\(q(0)=s\\)，计算\\((x_1,q(x_1)),(x_2,q(x_2)),...,(x_{n},q(x_{n}))\\)，将对应的\\(q(x_i)\\)分享给第i个用户。\n\\(k\\)个用户通过其秘密分片进行拉格朗日插值后恢复\\(q(x)\\)，进而计算出\\(q(0)\\)。"
+    "text": "dconf-editor是一个非常简单易用的Ubuntu设置修改程序，它把大量的Ubuntu系统的设置可视化了。\n好处是显而易见的，以后想要修改一些设置的话就不用再百度搜索命令再手动输入，还担心命令是否有问题了（多么痛的领悟…）。"
   },
   {
-    "objectID": "blog/crypto_20231201_FIBE/index.html#setup",
-    "href": "blog/crypto_20231201_FIBE/index.html#setup",
-    "title": "Fuzzy Identity-Based Encryption",
-    "section": "",
-    "text": "生成pairing相关公共参数 \\(&lt;e, g, G_1, G_T,Z_r&gt;\\)。\n确定属性全集\\(U\\)为整数集合\\(\\{1, 2,..., |U|\\}\\)，以及系统门限值\\(d\\)。\n针对每个属性\\(i\\)选择随机数\\(t_i\\in Z_r\\)作为主密钥组件，计算\\(T_i=g^{t_i}\\)作为对应的公钥组件。\n选取随机数\\(y\\in Z_r\\)，并计算\\(Y=e(g,g)^{y}\\)。\n最终，系统主密钥\\(msk=\\langle t_1,t_2,...t_{|U|}, y \\rangle\\)，公钥\\(pk=\\langle T_1,T_2,...,T_{|U|},Y \\rangle\\)。"
+    "objectID": "blog/linux_20201022_dconf_editor/index.html#一安装方法",
+    "href": "blog/linux_20201022_dconf_editor/index.html#一安装方法",
+    "title": "What Is DCONF-EDITOR?",
+    "section": "一、安装方法",
+    "text": "一、安装方法\n安装方法如下：\n$ sudo apt install dconf-editor\n安装好之后打开也很方便：按下ALT+F2打开命令搜索框，输入dconf-editor即可。"
   },
   {
-    "objectID": "blog/crypto_20231201_FIBE/index.html#key-generation",
-    "href": "blog/crypto_20231201_FIBE/index.html#key-generation",
-    "title": "Fuzzy Identity-Based Encryption",
-    "section": "",
-    "text": "随机选择一个\\(d-1\\)次多项式\\(q(x)\\)，使得\\(q(0)=y\\)。\n针对用户属性集合\\(S\\)中的每个属性\\(i\\)，计算\\(q(i)\\)，进一步计算\\(D_i=g^{\\frac{q(i)}{t_i}}\\)。\n用户私钥\\(sk= \\{D_i\\}_{i\\in S}\\)。"
+    "objectID": "blog/linux_20201022_dconf_editor/index.html#二使用方法",
+    "href": "blog/linux_20201022_dconf_editor/index.html#二使用方法",
+    "title": "What Is DCONF-EDITOR?",
+    "section": "二、使用方法",
+    "text": "二、使用方法\n\n案例一\n如果之前长期使用Mac或Windows的话，对Ubuntu 18.04桌面可能有些不适应，例如dock程序栏的show application按钮默认是放置在dock的末端。那么尤其是把dock防止在底部的时候，在屏幕右下才能找到这个遥远的show application。那么如何修改呢？\n方法如下：\n\n第一步，打开dconf-editor；\n第二步，按照以下路径找到 show-apps-at-top 这个选项，然后设置为 on："
   },
   {
-    "objectID": "blog/crypto_20231201_FIBE/index.html#encryption",
-    "href": "blog/crypto_20231201_FIBE/index.html#encryption",
-    "title": "Fuzzy Identity-Based Encryption",
+    "objectID": "blog/machinelearning_20210721_how_to_manage_envs_of_jupyter/index.html",
+    "href": "blog/machinelearning_20210721_how_to_manage_envs_of_jupyter/index.html",
+    "title": "How To Manage Your ENVS in Jupyter",
     "section": "",
-    "text": "选取随机数\\(s\\in Zr\\)，针对明文消息\\(M\\in G_T\\)，计算\\(E'=M\\cdot Y^s=M\\cdot e(g,g)^{ys}\\)。\n针对明文属性集合\\(W\\)中的每个属性\\(i\\)，计算\\(E_i={T_i}^s\\)。\n密文为\\(ct=\\langle E', \\{E_i\\}_{i\\in W} \\rangle\\)。"
+    "text": "one way is to install ipykernel when you create a new env\nconda create -n [your_env_name] python=\\[python_version_you_want\\] ipykernel\nfor example：\nconda create -n test_env python=3.6 ipykernel\nanother way is to install ipykernel in existing env\nsource activate [your_env_name]\nconda install -n [your_env_name] ipykernel\nfor example：\nsource activate existed_env\nconda install -n existed_env ipykernel"
   },
   {
-    "objectID": "blog/crypto_20231201_FIBE/index.html#decryption",
-    "href": "blog/crypto_20231201_FIBE/index.html#decryption",
-    "title": "Fuzzy Identity-Based Encryption",
+    "objectID": "blog/machinelearning_20210721_how_to_manage_envs_of_jupyter/index.html#step-1-install-ipykernel-in-your-envs",
+    "href": "blog/machinelearning_20210721_how_to_manage_envs_of_jupyter/index.html#step-1-install-ipykernel-in-your-envs",
+    "title": "How To Manage Your ENVS in Jupyter",
     "section": "",
-    "text": "如果用户属性集合\\(S\\)和明文属性集合\\(W\\)重合属性个数不小于\\(d\\)，可按如下方法解密。\n从所有重合属性中选取\\(d\\)个构成属性集合\\(I\\)。\n针对\\(I\\)中的每个属性\\(i\\)，计算\\(P_i = e(E_i, D_i)^{\\delta_i(0)}=e(g,g)^{sq(i)\\delta_i(0)}\\)，其中\\(\\delta_i(0)\\)是拉格朗日因子。\n\\(\\prod_{i\\in I} P_i = e(g,g)^{s\\sum_{i\\in I}q(i)\\delta_i(0)}=e(g,g)^{sy}\\)\n\\(E'/\\prod_{i\\in I} P_i = M\\)"
+    "text": "one way is to install ipykernel when you create a new env\nconda create -n [your_env_name] python=\\[python_version_you_want\\] ipykernel\nfor example：\nconda create -n test_env python=3.6 ipykernel\nanother way is to install ipykernel in existing env\nsource activate [your_env_name]\nconda install -n [your_env_name] ipykernel\nfor example：\nsource activate existed_env\nconda install -n existed_env ipykernel"
   },
   {
-    "objectID": "blog/crypto_20231201_FIBE/index.html#算法实现注意事项",
-    "href": "blog/crypto_20231201_FIBE/index.html#算法实现注意事项",
-    "title": "Fuzzy Identity-Based Encryption",
-    "section": "",
-    "text": "属性用整数表示。实际应用中通过索引表将每一个整数和一个字符串属性对应起来。\n多项式求值和拉格朗日插值在群Zr上进行，因此相应的int值在计算前要转换为Zr Element。\n对于重复使用的值，一定要记得使用getImmutable()或者duplicate()。尤其是在for循环中。"
+    "objectID": "blog/machinelearning_20210721_how_to_manage_envs_of_jupyter/index.html#step-2-config-your-env-in-jupyter-kernel",
+    "href": "blog/machinelearning_20210721_how_to_manage_envs_of_jupyter/index.html#step-2-config-your-env-in-jupyter-kernel",
+    "title": "How To Manage Your ENVS in Jupyter",
+    "section": "Step 2: config your env in Jupyter kernel",
+    "text": "Step 2: config your env in Jupyter kernel\nsource activate [your_env_name]\npython -m ipykernel install --user --name [your_env_name] --display-name [display_name]\nfor example, if you want to config new_env to Jupyter kernel:\nsource activate new_env\npython -m ipykernel install --user --name new_env --display-name \"new_env\""
   },
   {
-    "objectID": "blog/linux_20231121_hoow_to_use_git/index.html",
-    "href": "blog/linux_20231121_hoow_to_use_git/index.html",
-    "title": "How to use Git",
-    "section": "",
-    "text": "进入到想要同步的项目文件夹，按先后顺序执行以下操作：\n# 初始化\ngit init\n# add要上传的文件\ngit add &lt;your file&gt;\n# 在Bash环境中commit信息使用单引号，Windows的cmd中commit信息使用双引号\ngit commit -m \"your commit\"\n# 将主分支的命名从master改为main\ngit branch -M main\n# 创建在Github上的远程仓库\ngit remote add origin https://github.com/account/project.git\n# 将main分支push到远程仓库\ngit push -u origin main\n\n\n\n# 查看项目远程地址\ngit remote -v\n\n# 查看远程项目的所有分支，红颜色分支代表当前所在的分支\ngit branch -a\n\n# 查看历史提交信息\ngit log\n\n# 查看当前分支修改了哪些内容\ngit status\n\n\n\ngit config --list\n\n\n\n# 获取标签信息\ngit fetch tags\n\n# 查看所有的标签\ngit tag -l\n\n# 切换到对应的标签\ngit checkout [target_tag]\n\n# 查看当前标签以及分支修改情况\ngit status\n\n\n\n设置使用代理 将你的proxy server地址代替以下的127.0.0.1\n\nhttp类型代理\n\ngit config --global http.proxy http://127.0.0.1:1080\ngit config --global https.proxy https://127.0.0.1:1080\nsocks5类型代理\ngit config --global http.proxy ‘socks5://127.0.0.1:1080’\ngit config --global https.proxy ‘socks5://127.0.0.1:1080’\np.s. 亲测发现本地配置http类型代理生效，配置socks5类型代理没有用。\n查看当前的代理配置\ngit config --global --get http.proxy\ngit config --global --get https.proxy\n取消设置代理\ngit config --global --unset http.proxy\ngit config --global --unset https.proxy\n仅对github.com\ngit config --global http.https://github.com.proxy socks5://127.0.0.1:1080\n取消代理\ngit config --global --unset http.https://github.com.proxy\n设置使用需账户密码验证的代理 http类型代理\ngit config --global http.proxy http://username:passwd@127.0.0.1:1080\nsocks5类型代理\ngit config --global http.proxy socks5://username:passwd@127.0.0.1:1080"
+    "objectID": "blog/machinelearning_20210721_how_to_manage_envs_of_jupyter/index.html#step-1-check-jupyter-kernel",
+    "href": "blog/machinelearning_20210721_how_to_manage_envs_of_jupyter/index.html#step-1-check-jupyter-kernel",
+    "title": "How To Manage Your ENVS in Jupyter",
+    "section": "Step 1: check Jupyter kernel",
+    "text": "Step 1: check Jupyter kernel\njupyter kernelspec list"
   },
   {
-    "objectID": "blog/linux_20231121_hoow_to_use_git/index.html#从本地仓库上传github的空仓库",
-    "href": "blog/linux_20231121_hoow_to_use_git/index.html#从本地仓库上传github的空仓库",
-    "title": "How to use Git",
-    "section": "",
-    "text": "进入到想要同步的项目文件夹，按先后顺序执行以下操作：\n# 初始化\ngit init\n# add要上传的文件\ngit add &lt;your file&gt;\n# 在Bash环境中commit信息使用单引号，Windows的cmd中commit信息使用双引号\ngit commit -m \"your commit\"\n# 将主分支的命名从master改为main\ngit branch -M main\n# 创建在Github上的远程仓库\ngit remote add origin https://github.com/account/project.git\n# 将main分支push到远程仓库\ngit push -u origin main"
-  },
-  {
-    "objectID": "blog/linux_20231121_hoow_to_use_git/index.html#查看git的分支",
-    "href": "blog/linux_20231121_hoow_to_use_git/index.html#查看git的分支",
-    "title": "How to use Git",
-    "section": "",
-    "text": "# 查看项目远程地址\ngit remote -v\n\n# 查看远程项目的所有分支，红颜色分支代表当前所在的分支\ngit branch -a\n\n# 查看历史提交信息\ngit log\n\n# 查看当前分支修改了哪些内容\ngit status"
-  },
-  {
-    "objectID": "blog/linux_20231121_hoow_to_use_git/index.html#显示当前的配置信息",
-    "href": "blog/linux_20231121_hoow_to_use_git/index.html#显示当前的配置信息",
-    "title": "How to use Git",
-    "section": "",
-    "text": "git config --list"
-  },
-  {
-    "objectID": "blog/linux_20231121_hoow_to_use_git/index.html#查看标签信息",
-    "href": "blog/linux_20231121_hoow_to_use_git/index.html#查看标签信息",
-    "title": "How to use Git",
-    "section": "",
-    "text": "# 获取标签信息\ngit fetch tags\n\n# 查看所有的标签\ngit tag -l\n\n# 切换到对应的标签\ngit checkout [target_tag]\n\n# 查看当前标签以及分支修改情况\ngit status"
-  },
-  {
-    "objectID": "blog/linux_20231121_hoow_to_use_git/index.html#git使用代理加速",
-    "href": "blog/linux_20231121_hoow_to_use_git/index.html#git使用代理加速",
-    "title": "How to use Git",
-    "section": "",
-    "text": "设置使用代理 将你的proxy server地址代替以下的127.0.0.1\n\nhttp类型代理\n\ngit config --global http.proxy http://127.0.0.1:1080\ngit config --global https.proxy https://127.0.0.1:1080\nsocks5类型代理\ngit config --global http.proxy ‘socks5://127.0.0.1:1080’\ngit config --global https.proxy ‘socks5://127.0.0.1:1080’\np.s. 亲测发现本地配置http类型代理生效，配置socks5类型代理没有用。\n查看当前的代理配置\ngit config --global --get http.proxy\ngit config --global --get https.proxy\n取消设置代理\ngit config --global --unset http.proxy\ngit config --global --unset https.proxy\n仅对github.com\ngit config --global http.https://github.com.proxy socks5://127.0.0.1:1080\n取消代理\ngit config --global --unset http.https://github.com.proxy\n设置使用需账户密码验证的代理 http类型代理\ngit config --global http.proxy http://username:passwd@127.0.0.1:1080\nsocks5类型代理\ngit config --global http.proxy socks5://username:passwd@127.0.0.1:1080"
+    "objectID": "blog/machinelearning_20210721_how_to_manage_envs_of_jupyter/index.html#step-2-delete-the-specific-kernel",
+    "href": "blog/machinelearning_20210721_how_to_manage_envs_of_jupyter/index.html#step-2-delete-the-specific-kernel",
+    "title": "How To Manage Your ENVS in Jupyter",
+    "section": "Step 2: delete the specific kernel",
+    "text": "Step 2: delete the specific kernel\njupyter kernelspec uninstall [your_env_name]"
   },
   {
     "objectID": "dev/short_bio.html",

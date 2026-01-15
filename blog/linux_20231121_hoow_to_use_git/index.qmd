@@ -1,5 +1,5 @@
 ---
-title: "How to use Git"
+title: "How To Use Git?"
 description: |
   common usage of Git. 
 author: "Guofeng Lin"

@@ -14,8 +14,6 @@ format:
     code-tools: false
 ---
 
-# 模糊身份基加密(Fuzzy Identity-Based Encryption, FIBE)
-
 **Paper:** [Sahai, Amit, and Brent Waters. "Fuzzy identity-based encryption." Annual international conference on the theory and applications of cryptographic techniques. Berlin, Heidelberg: Springer Berlin Heidelberg, 2005.](https://eprint.iacr.org/2004/086.pdf)
 
 ## Preliminares

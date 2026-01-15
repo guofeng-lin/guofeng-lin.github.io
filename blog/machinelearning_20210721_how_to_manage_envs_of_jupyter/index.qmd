@@ -1,0 +1,71 @@
+---
+title: "How To Manage Your ENVS in Jupyter"
+description: |
+  common operations on management of jupyter envs
+author: "Guofeng Lin"
+date: "2021-07-21"
+categories: [Jupyter, Machine Learning]
+sidebar: false
+format: 
+  html:
+    toc: true
+    toc-depth: 2
+    code-fold: false
+    code-tools: false
+---
+
+## Step 1: install ipykernel in your envs
+
+**one way is to install ipykernel when you create a new env**
+
+```bash
+conda create -n [your_env_name] python=\[python_version_you_want\] ipykernel
+```
+
+for example：
+
+```bash
+conda create -n test_env python=3.6 ipykernel
+```
+
+**another way is to install ipykernel in existing env**
+
+```bash
+source activate [your_env_name]
+conda install -n [your_env_name] ipykernel
+```
+
+for example：
+
+```bash
+source activate existed_env
+conda install -n existed_env ipykernel
+```
+
+## Step 2: config your env in Jupyter kernel
+
+```bash
+source activate [your_env_name]
+python -m ipykernel install --user --name [your_env_name] --display-name [display_name]
+```
+for example, if you want to config new_env to Jupyter kernel:
+
+```bash
+source activate new_env
+python -m ipykernel install --user --name new_env --display-name "new_env"
+```
+
+# How to Delete Env in Jupyter?
+
+## Step 1: check Jupyter kernel
+
+```bash
+jupyter kernelspec list
+```
+
+## Step 2: delete the specific kernel
+
+```bash
+jupyter kernelspec uninstall [your_env_name]
+```
+
