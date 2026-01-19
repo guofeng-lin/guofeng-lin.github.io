@@ -1,0 +1,113 @@
+---
+title: "Install Nvidia Driver on Your Ubuntu"
+description: |
+  使用第三方库安装NVIDIA官方显卡驱动，并禁用开源驱动. 
+author: "Guofeng Lin"
+date: "2023-11-30"
+categories: [Linux, Ubuntu]
+sidebar: false
+format: 
+  html:
+    toc: true
+    toc-depth: 2
+    code-fold: false
+    code-tools: false
+---
+
+## 一、使用国内软件源加速
+速度慢的原因在于许多依赖包都是直接通过国外的源下载的，这里可以手动设置国内的镜像，步骤如下：
+1. 打开sources.list这个文件
+```bash
+sudo gedit /etc/apt/sources.list
+```
+2. 清空里面的内容，把以下的源添加进去
+```txt
+# 阿里云源
+deb http://mirrors.aliyun.com/ubuntu/ bionic main restricted universe multiverse
+deb http://mirrors.aliyun.com/ubuntu/ bionic-security main restricted universe multiverse
+deb http://mirrors.aliyun.com/ubuntu/ bionic-updates main restricted universe multiverse
+deb http://mirrors.aliyun.com/ubuntu/ bionic-backports main restricted universe multiverse
+##測試版源
+deb http://mirrors.aliyun.com/ubuntu/ bionic-proposed main restricted universe multiverse
+# 源碼
+deb-src http://mirrors.aliyun.com/ubuntu/ bionic main restricted universe multiverse
+deb-src http://mirrors.aliyun.com/ubuntu/ bionic-security main restricted universe multiverse
+deb-src http://mirrors.aliyun.com/ubuntu/ bionic-updates main restricted universe multiverse
+deb-src http://mirrors.aliyun.com/ubuntu/ bionic-backports main restricted universe multiverse
+##測試版源
+deb-src http://mirrors.aliyun.com/ubuntu/ bionic-proposed main restricted universe multiverse
+
+
+# 清华大学源
+deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ bionic main restricted universe multiverse
+deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ bionic-security main restricted universe multiverse
+deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ bionic-updates main restricted universe multiverse
+deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ bionic-backports main restricted universe multiverse
+##測試版源
+deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ bionic-proposed main restricted universe multiverse
+# 源碼
+deb-src http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ bionic main restricted universe multiverse
+deb-src http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ bionic-security main restricted universe multiverse
+deb-src http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ bionic-updates main restricted universe multiverse
+deb-src http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ bionic-backports main restricted universe multiverse
+##測試版源
+deb-src http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ bionic-proposed main restricted universe multiverse
+```
+3. 更新软件列表
+```bash
+sudo apt-get update
+```
+4. 更新软件
+```bash
+sudo apt-get upgrade
+```
+## 添加第三方仓库PPA
+步骤如下：
+1. 输入指令添加
+```bash
+sudo add-apt-repository ppa:graphics-drivers/ppa
+```
+2. 更新软件列表
+```bash
+sudo apt update
+```
+# 二、禁用开源驱动nouveau
+Ubuntu默认是使用开源驱动nouveau的，因此在安装NVIDIA驱动前需要禁用nouveau，方法如下：
+1. 连续输入以下两条指令
+```bash
+sudo bash -c "echo blacklist nouveau > /etc/modprobe.d/blacklist-nvidia-nouveau.conf"
+```
+```bash
+sudo bash -c "echo options nouveau modeset=0 >> /etc/modprobe.d/blacklist-nvidia-nouveau.conf"
+```
+2. 然后可以输入以下指令验证以上的指令输入到"/etc/modprobe.d/blacklist-nvidia-nouveau.conf"这个文件中：
+```bash
+cat /etc/modprobe.d/blacklist-nvidia-nouveau.conf
+```
+如果显示以下信息就表示已经成功禁用了：
+```bash
+$ cat /etc/modprobe.d/blacklist-nvidia-nouveau.conf
+blacklist nouveau
+options nouveau modeset=0
+```
+# 三、正式安装NIVDIA驱动
+1. 卸载旧的NVIDIA驱动（如果需要的话）：
+```bash
+sudo apt-get purge nvidia*
+```
+2. 把显卡驱动加进PPA
+```bash
+sudo add-apt-repository ppa:graphics-drivers
+sudo apt-get update
+```
+3. 查找最新的NVIDIA驱动
+```bash
+sudo apt-cache search nvidia
+```
+4. 通过以下指令查看推荐的驱动版本
+```bash
+ubuntu-drivers devices
+```
+5. 打开系统里的“Ubuntu软件”，然后点击左上角的“软件和更新”，点击“附加驱动”，选择其中一个驱动（我发现最好是选较新的、专有的驱动），然后点击进行“应用更改”。安装完之后系统会要求用户进行重启，重启完如果发现屏幕华丽了就大功告成啦
+
+6. 如果不放心可以打开设置里的“详细信息”，驱动安装正确的话应该能看到显卡的相关信息。
