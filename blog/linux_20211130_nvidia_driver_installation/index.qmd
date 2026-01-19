@@ -61,7 +61,7 @@ sudo apt-get update
 ```bash
 sudo apt-get upgrade
 ```
-## 添加第三方仓库PPA
+## 二、添加第三方仓库PPA
 步骤如下：
 1. 输入指令添加
 ```bash
@@ -71,7 +71,7 @@ sudo add-apt-repository ppa:graphics-drivers/ppa
 ```bash
 sudo apt update
 ```
-# 二、禁用开源驱动nouveau
+## 三、禁用开源驱动nouveau
 Ubuntu默认是使用开源驱动nouveau的，因此在安装NVIDIA驱动前需要禁用nouveau，方法如下：
 1. 连续输入以下两条指令
 ```bash
@@ -90,7 +90,7 @@ $ cat /etc/modprobe.d/blacklist-nvidia-nouveau.conf
 blacklist nouveau
 options nouveau modeset=0
 ```
-# 三、正式安装NIVDIA驱动
+## 四、正式安装NIVDIA驱动
 1. 卸载旧的NVIDIA驱动（如果需要的话）：
 ```bash
 sudo apt-get purge nvidia*

@@ -157,9 +157,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
    
   <ul class="collapse">
   <li><a href="#一使用国内软件源加速" id="toc-一使用国内软件源加速" class="nav-link active" data-scroll-target="#一使用国内软件源加速">一、使用国内软件源加速</a></li>
-  <li><a href="#添加第三方仓库ppa" id="toc-添加第三方仓库ppa" class="nav-link" data-scroll-target="#添加第三方仓库ppa">添加第三方仓库PPA</a></li>
-  <li><a href="#二禁用开源驱动nouveau" id="toc-二禁用开源驱动nouveau" class="nav-link" data-scroll-target="#二禁用开源驱动nouveau">二、禁用开源驱动nouveau</a></li>
-  <li><a href="#三正式安装nivdia驱动" id="toc-三正式安装nivdia驱动" class="nav-link" data-scroll-target="#三正式安装nivdia驱动">三、正式安装NIVDIA驱动</a></li>
+  <li><a href="#二添加第三方仓库ppa" id="toc-二添加第三方仓库ppa" class="nav-link" data-scroll-target="#二添加第三方仓库ppa">二、添加第三方仓库PPA</a></li>
+  <li><a href="#三禁用开源驱动nouveau" id="toc-三禁用开源驱动nouveau" class="nav-link" data-scroll-target="#三禁用开源驱动nouveau">三、禁用开源驱动nouveau</a></li>
+  <li><a href="#四正式安装nivdia驱动" id="toc-四正式安装nivdia驱动" class="nav-link" data-scroll-target="#四正式安装nivdia驱动">四、正式安装NIVDIA驱动</a></li>
   </ul>
 <div class="toc-actions"><ul class="collapse"><li><a href="https://github.com/guofeng-lin/guofeng-lin.github.io/edit/main/blog/linux_20211130_nvidia_driver_installation/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/guofeng-lin/guofeng-lin.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -252,8 +252,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ol>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt-get upgrade</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
-<section id="添加第三方仓库ppa" class="level2">
-<h2 class="anchored" data-anchor-id="添加第三方仓库ppa">添加第三方仓库PPA</h2>
+<section id="二添加第三方仓库ppa" class="level2">
+<h2 class="anchored" data-anchor-id="二添加第三方仓库ppa">二、添加第三方仓库PPA</h2>
 <p>步骤如下： 1. 输入指令添加</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> add-apt-repository ppa:graphics-drivers/ppa</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ol start="2" type="1">
@@ -261,8 +261,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ol>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt update</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
-<section id="二禁用开源驱动nouveau" class="level1">
-<h1>二、禁用开源驱动nouveau</h1>
+<section id="三禁用开源驱动nouveau" class="level2">
+<h2 class="anchored" data-anchor-id="三禁用开源驱动nouveau">三、禁用开源驱动nouveau</h2>
 <p>Ubuntu默认是使用开源驱动nouveau的，因此在安装NVIDIA驱动前需要禁用nouveau，方法如下： 1. 连续输入以下两条指令</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> bash <span class="at">-c</span> <span class="st">"echo blacklist nouveau &gt; /etc/modprobe.d/blacklist-nvidia-nouveau.conf"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> bash <span class="at">-c</span> <span class="st">"echo options nouveau modeset=0 &gt;&gt; /etc/modprobe.d/blacklist-nvidia-nouveau.conf"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -275,8 +275,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="ex">blacklist</span> nouveau</span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="ex">options</span> nouveau modeset=0</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
-<section id="三正式安装nivdia驱动" class="level1">
-<h1>三、正式安装NIVDIA驱动</h1>
+<section id="四正式安装nivdia驱动" class="level2">
+<h2 class="anchored" data-anchor-id="四正式安装nivdia驱动">四、正式安装NIVDIA驱动</h2>
 <ol type="1">
 <li>卸载旧的NVIDIA驱动（如果需要的话）：</li>
 </ol>
