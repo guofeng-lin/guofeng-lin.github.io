@@ -8,9 +8,9 @@
 
 <meta name="author" content="Guofeng Lin">
 <meta name="dcterms.date" content="2023-11-30">
-<meta name="description" content="使用第三方库安装NVIDIA官方显卡驱动，并禁用开源驱动.">
+<meta name="description" content="Install the official NVIDIA driver using a third-party library and disable the open-source driver.">
 
-<title>Install Nvidia Driver on Your Ubuntu – Hello, I’m Guofeng</title>
+<title>Install NVIDIA driver on your ubuntu – Hello, I’m Guofeng</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -156,10 +156,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul class="collapse">
-  <li><a href="#一使用国内软件源加速" id="toc-一使用国内软件源加速" class="nav-link active" data-scroll-target="#一使用国内软件源加速">一、使用国内软件源加速</a></li>
-  <li><a href="#二添加第三方仓库ppa" id="toc-二添加第三方仓库ppa" class="nav-link" data-scroll-target="#二添加第三方仓库ppa">二、添加第三方仓库PPA</a></li>
-  <li><a href="#三禁用开源驱动nouveau" id="toc-三禁用开源驱动nouveau" class="nav-link" data-scroll-target="#三禁用开源驱动nouveau">三、禁用开源驱动nouveau</a></li>
-  <li><a href="#四正式安装nivdia驱动" id="toc-四正式安装nivdia驱动" class="nav-link" data-scroll-target="#四正式安装nivdia驱动">四、正式安装NIVDIA驱动</a></li>
+  <li><a href="#add-third-party-repositpry-ppa" id="toc-add-third-party-repositpry-ppa" class="nav-link active" data-scroll-target="#add-third-party-repositpry-ppa">1. add third-party repositpry PPA</a></li>
+  <li><a href="#disable-the-open-source-driver-nouveau" id="toc-disable-the-open-source-driver-nouveau" class="nav-link" data-scroll-target="#disable-the-open-source-driver-nouveau">2. disable the open-source driver nouveau</a></li>
+  <li><a href="#install-the-official-nvidia-driver" id="toc-install-the-official-nvidia-driver" class="nav-link" data-scroll-target="#install-the-official-nvidia-driver">3. Install the official NVIDIA driver</a></li>
   </ul>
 <div class="toc-actions"><ul class="collapse"><li><a href="https://github.com/guofeng-lin/guofeng-lin.github.io/edit/main/blog/linux_20211130_nvidia_driver_installation/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/guofeng-lin/guofeng-lin.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -168,7 +167,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Install Nvidia Driver on Your Ubuntu</h1>
+<h1 class="title">Install NVIDIA driver on your ubuntu</h1>
   <div class="quarto-categories">
     <div class="quarto-category">Linux</div>
     <div class="quarto-category">Ubuntu</div>
@@ -177,7 +176,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <div>
   <div class="description">
-    <p>使用第三方库安装NVIDIA官方显卡驱动，并禁用开源驱动.</p>
+    <p>Install the official NVIDIA driver using a third-party library and disable the open-source driver.</p>
   </div>
 </div>
 
@@ -206,98 +205,37 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="一使用国内软件源加速" class="level2">
-<h2 class="anchored" data-anchor-id="一使用国内软件源加速">一、使用国内软件源加速</h2>
-<p>速度慢的原因在于许多依赖包都是直接通过国外的源下载的，这里可以手动设置国内的镜像，步骤如下： 1. 打开sources.list这个文件</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> gedit /etc/apt/sources.list</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<ol start="2" type="1">
-<li>清空里面的内容，把以下的源添加进去</li>
-</ol>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode txt code-with-copy"><code class="sourceCode default"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a># 阿里云源</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>deb http://mirrors.aliyun.com/ubuntu/ bionic main restricted universe multiverse</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>deb http://mirrors.aliyun.com/ubuntu/ bionic-security main restricted universe multiverse</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>deb http://mirrors.aliyun.com/ubuntu/ bionic-updates main restricted universe multiverse</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>deb http://mirrors.aliyun.com/ubuntu/ bionic-backports main restricted universe multiverse</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>##測試版源</span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>deb http://mirrors.aliyun.com/ubuntu/ bionic-proposed main restricted universe multiverse</span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a># 源碼</span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>deb-src http://mirrors.aliyun.com/ubuntu/ bionic main restricted universe multiverse</span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>deb-src http://mirrors.aliyun.com/ubuntu/ bionic-security main restricted universe multiverse</span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>deb-src http://mirrors.aliyun.com/ubuntu/ bionic-updates main restricted universe multiverse</span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>deb-src http://mirrors.aliyun.com/ubuntu/ bionic-backports main restricted universe multiverse</span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>##測試版源</span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>deb-src http://mirrors.aliyun.com/ubuntu/ bionic-proposed main restricted universe multiverse</span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a># 清华大学源</span>
-<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ bionic main restricted universe multiverse</span>
-<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ bionic-security main restricted universe multiverse</span>
-<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ bionic-updates main restricted universe multiverse</span>
-<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ bionic-backports main restricted universe multiverse</span>
-<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>##測試版源</span>
-<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ bionic-proposed main restricted universe multiverse</span>
-<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a># 源碼</span>
-<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>deb-src http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ bionic main restricted universe multiverse</span>
-<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>deb-src http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ bionic-security main restricted universe multiverse</span>
-<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>deb-src http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ bionic-updates main restricted universe multiverse</span>
-<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>deb-src http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ bionic-backports main restricted universe multiverse</span>
-<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>##測試版源</span>
-<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>deb-src http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ bionic-proposed main restricted universe multiverse</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<ol start="3" type="1">
-<li>更新软件列表</li>
-</ol>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt-get update</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<ol start="4" type="1">
-<li>更新软件</li>
-</ol>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt-get upgrade</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<section id="add-third-party-repositpry-ppa" class="level2">
+<h2 class="anchored" data-anchor-id="add-third-party-repositpry-ppa">1. add third-party repositpry PPA</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> add-apt-repository ppa:graphics-drivers/ppa</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt update</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
-<section id="二添加第三方仓库ppa" class="level2">
-<h2 class="anchored" data-anchor-id="二添加第三方仓库ppa">二、添加第三方仓库PPA</h2>
-<p>步骤如下： 1. 输入指令添加</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> add-apt-repository ppa:graphics-drivers/ppa</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<ol start="2" type="1">
-<li>更新软件列表</li>
-</ol>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt update</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<section id="disable-the-open-source-driver-nouveau" class="level2">
+<h2 class="anchored" data-anchor-id="disable-the-open-source-driver-nouveau">2. disable the open-source driver nouveau</h2>
+<p>Ubuntu uses the open-source driver nouveau by default, so you need to disable nouveau before installing the NVIDIA driver.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> bash <span class="at">-c</span> <span class="st">"echo blacklist nouveau &gt; /etc/modprobe.d/blacklist-nvidia-nouveau.conf"</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> bash <span class="at">-c</span> <span class="st">"echo options nouveau modeset=0 &gt;&gt; /etc/modprobe.d/blacklist-nvidia-nouveau.conf"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Then you can enter the following command to verify that the above command was entered into the file “/etc/modprobe.d/blacklist-nvidia-nouveau.conf”.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> /etc/modprobe.d/blacklist-nvidia-nouveau.conf</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>It works if the following message is displayed：</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> cat /etc/modprobe.d/blacklist-nvidia-nouveau.conf</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="ex">blacklist</span> nouveau</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="ex">options</span> nouveau modeset=0</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
-<section id="三禁用开源驱动nouveau" class="level2">
-<h2 class="anchored" data-anchor-id="三禁用开源驱动nouveau">三、禁用开源驱动nouveau</h2>
-<p>Ubuntu默认是使用开源驱动nouveau的，因此在安装NVIDIA驱动前需要禁用nouveau，方法如下： 1. 连续输入以下两条指令</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> bash <span class="at">-c</span> <span class="st">"echo blacklist nouveau &gt; /etc/modprobe.d/blacklist-nvidia-nouveau.conf"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> bash <span class="at">-c</span> <span class="st">"echo options nouveau modeset=0 &gt;&gt; /etc/modprobe.d/blacklist-nvidia-nouveau.conf"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<ol start="2" type="1">
-<li>然后可以输入以下指令验证以上的指令输入到”/etc/modprobe.d/blacklist-nvidia-nouveau.conf”这个文件中：</li>
-</ol>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> /etc/modprobe.d/blacklist-nvidia-nouveau.conf</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>如果显示以下信息就表示已经成功禁用了：</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> cat /etc/modprobe.d/blacklist-nvidia-nouveau.conf</span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="ex">blacklist</span> nouveau</span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="ex">options</span> nouveau modeset=0</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-<section id="四正式安装nivdia驱动" class="level2">
-<h2 class="anchored" data-anchor-id="四正式安装nivdia驱动">四、正式安装NIVDIA驱动</h2>
-<ol type="1">
-<li>卸载旧的NVIDIA驱动（如果需要的话）：</li>
-</ol>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt-get purge nvidia<span class="pp">*</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<ol start="2" type="1">
-<li>把显卡驱动加进PPA</li>
-</ol>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> add-apt-repository ppa:graphics-drivers</span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt-get update</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<ol start="3" type="1">
-<li>查找最新的NVIDIA驱动</li>
-</ol>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt-cache search nvidia</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<ol start="4" type="1">
-<li>通过以下指令查看推荐的驱动版本</li>
-</ol>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="ex">ubuntu-drivers</span> devices</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<ol start="5" type="1">
-<li><p>打开系统里的“Ubuntu软件”，然后点击左上角的“软件和更新”，点击“附加驱动”，选择其中一个驱动（我发现最好是选较新的、专有的驱动），然后点击进行“应用更改”。安装完之后系统会要求用户进行重启，重启完如果发现屏幕华丽了就大功告成啦</p></li>
-<li><p>如果不放心可以打开设置里的“详细信息”，驱动安装正确的话应该能看到显卡的相关信息。</p></li>
-</ol>
+<section id="install-the-official-nvidia-driver" class="level2">
+<h2 class="anchored" data-anchor-id="install-the-official-nvidia-driver">3. Install the official NVIDIA driver</h2>
+<p>Uninstall the old NVIDIA driver (if needed):</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt-get purge nvidia<span class="pp">*</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Add drivers to PPA repository:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> add-apt-repository ppa:graphics-drivers</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt-get update</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Search for latest NVIDIA drivers:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt-cache search nvidia</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Search for recommanded NVIDIA drivers:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">ubuntu-drivers</span> devices</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Open “Ubuntu Software” in your system, then click “Software &amp; Updates” in the upper left corner, then click “Additional Drivers,” select one of the drivers (I find it best to choose a newer, proprietary driver), and then click “Apply Changes.” After installation, the system will ask you to restart. If the screen looks great after restarting, you’re all done!</p>
+<p>View the current driver:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">nvidia-smi</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 
 
 </section>

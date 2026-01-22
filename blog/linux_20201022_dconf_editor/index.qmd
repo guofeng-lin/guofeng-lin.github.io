@@ -1,5 +1,5 @@
 ---
-title: "What Is DCONF-EDITOR?"
+title: "What is dconf-editor"
 description: |
   use dconf-editor to make your ubuntu destop more friendly. 
 author: "Guofeng Lin"
@@ -14,28 +14,25 @@ format:
     code-tools: false
 ---
 
-dconf-editor是一个非常简单易用的Ubuntu设置修改程序，它把大量的Ubuntu系统的设置可视化了。
+dconf-editor is a very simple and easy-to-use Ubuntu settings editing program that visualizes a large number of Ubuntu system settings.
 
-好处是显而易见的，以后想要修改一些设置的话就不用再百度搜索命令再手动输入，还担心命令是否有问题了（多么痛的领悟...）。
+The benefits are obvious: you no longer need to search for commands on Google and then manually type them in, worrying about whether the commands are correct.
 
-## 一、安装方法
-
-安装方法如下：
+## 1. Installation
 
 ```bash
 $ sudo apt install dconf-editor
 ```
 
-安装好之后打开也很方便：按下ALT+F2打开命令搜索框，输入dconf-editor即可。
+## 2. How to use dconf-editor
 
-## 二、使用方法
+Once installed, it's very easy to open: press ALT+F2 to open the command search box, and enter dconf-editor.
 
-### 案例一
+**use case 1** 
 
-如果之前长期使用Mac或Windows的话，对Ubuntu 18.04桌面可能有些不适应，例如dock程序栏的show application按钮默认是放置在dock的末端。那么尤其是把dock防止在底部的时候，在屏幕右下才能找到这个遥远的show application。那么如何修改呢？
+If you've been using Mac or Windows for a long time, you might find the Ubuntu 18.04 desktop a bit unfamiliar. For example, the "Show Applications" button in the dock is located at the very end of the dock by default. This means that especially when the dock is placed at the bottom, you can only find this distant "Show Applications" button in the lower right corner of the screen. So how do you change it?
 
-方法如下：
-
-* 第一步，打开dconf-editor；
-* 第二步，按照以下路径找到 `show-apps-at-top` 这个选项，然后设置为 `on`：
+* Step 1: press ALT+F2 to open dconf-editor
+* Step 2: locate the `show-apps-at-top` option in the following path `> org > gnome > shell > extension > dash-to-dock`
+* Step 3: set `show-apps-at-top` to `on`
 

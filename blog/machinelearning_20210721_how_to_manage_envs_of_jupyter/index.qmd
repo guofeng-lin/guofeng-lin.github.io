@@ -1,5 +1,5 @@
 ---
-title: "How To Manage Your ENVS in Jupyter"
+title: "How to manage your envs in jupyter"
 description: |
   common operations on management of jupyter envs
 author: "Guofeng Lin"

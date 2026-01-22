@@ -1,5 +1,5 @@
 ---
-title: "Fuzzy Identity-Based Encryption"
+title: "Fuzzy identity-based encryption"
 description: |
   Work flow of FIBE. 
 author: "Guofeng Lin"

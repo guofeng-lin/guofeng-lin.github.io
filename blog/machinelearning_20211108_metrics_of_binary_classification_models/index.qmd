@@ -1,5 +1,5 @@
 ---
-title: "Metrics of Binary Classification Models"
+title: "Evaluation indicators of binary classification models"
 author: "Guofeng Lin"
 description: |
   Accuracy, Precision and Recall 
@@ -14,34 +14,42 @@ format:
     code-tools: false
 ---
 
-# 二分类模型的评价指标
-## 前言-为什么要说评估指标这个事儿
-当我们在谈论分类模型好坏的时候，通常是采用一个测试数据集来测试模型的好坏。那么什么指标才能说明模型的好坏呢？可能有人会说，我直接看测试出来的正确率嘛，如果都正确那不就说明模型挺好的嘛。
+## Why talk about evaluation indicators
 
-这个思路有一定的道理，只是在一些数据集有可能是失衡的，这种正确率的高低与数据集分布之间具有很强的关联性。比如说在1000个人当中，可能只有997人得过水痘（标记为1），而只有3个人没得过水痘（标记为0）。那在这种情况下，加入模型输出恒为1的时候，正确率依然高达99.7%。因此这种评价指标并不能很好地说明模型的泛化能力。
-## 基本定义
-首先来看下如下定义：
-1. True Positive (TP)，表示模型预测为正样本，实际为正样本。
-2. False Positive (FP)，表示模型预测为正样本，实际为负样本。
-3. False Negative (FN)，表示模型预测为负样本，实际为正样本。
-4. True Negative (TN)，表示模型预测为负样本，实际为负样本。
+When discussing the quality of classification models, we usually use a test dataset to evaluate them. So, what metrics can truly indicate a model's quality? Some might say, "Just look at the accuracy rate; if it's all correct, then the model is pretty good."
 
-## 准确率（Accuracy）
-准确率表示模型预测正确的正样本和负样本占所有样本的比例，公式为：
+This approach has some merit, but some datasets may be imbalanced, and the accuracy rate is strongly correlated with the dataset distribution. For example, out of 1000 people, only 997 might have had chickenpox (labeled 1), while only 3 might not have had it (labeled 0). In this case, even if the model output is always 1, the accuracy rate would still be as high as 99.7%. Therefore, this evaluation metric cannot accurately reflect the model's generalization ability.
+
+## Basic Definitions
+
+Let's look at the following concepts:
+
+1. True Positive (TP): means that the model predicts a positive sample, and the sample is actually a positive sample.
+2. False Positive (FP): means that the model predicts a positive sample, but the sample is actually a negative sample.
+3. False Negative (FN): means that the models predicts a negative sample, but the sample is actually a positive sample.
+4. True Negative (TN): means that the models predicts a negative sample, and the sample is actually a negative sample.
+
+## Definition of Accuracy
+
+Accuracy represents the proportion of positive and negative samples correctly predicted by the model out of all samples, and the formula is:
 $$
 acc=\frac{TP+TF}{TP+FP+TN+FN}
 $$
 
+This is the accuracy metric mentioned in the example mentioned before, where categories with a large weighting often become the main factors affecting accuracy.
 
-这个就是前言中所讲的准确率指标，其中占比大的类别往往成为影响准确率的主要因素。
-## 精确率（Precision）
-精确率表示模型预测正确的正样本占所有预测为正样本的样本的比例，公式为：
+## Definition of Precision
+
+Precision represents the proportion of correctly predicted positive samples out of all samples predicted as positive. The formula is:
+
 $$
 precision=\frac{TP}{TP+FP}
 $$
 
-## 召回率（Recall）
-召回率表示模型预测正确的正样本占所有实际正样本的比例，公式为：
+## Definition of Recall
+
+Recall rate represents the proportion of correctly predicted positive samples out of all actual positive samples, and the formula is:
+
 $$
 recall=\frac{TP}{TP+FN}
 $$

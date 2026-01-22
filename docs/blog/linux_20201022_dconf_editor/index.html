@@ -10,7 +10,7 @@
 <meta name="dcterms.date" content="2020-10-22">
 <meta name="description" content="use dconf-editor to make your ubuntu destop more friendly.">
 
-<title>What Is DCONF-EDITOR? – Hello, I’m Guofeng</title>
+<title>What is dconf-editor – Hello, I’m Guofeng</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -156,8 +156,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul class="collapse">
-  <li><a href="#一安装方法" id="toc-一安装方法" class="nav-link active" data-scroll-target="#一安装方法">一、安装方法</a></li>
-  <li><a href="#二使用方法" id="toc-二使用方法" class="nav-link" data-scroll-target="#二使用方法">二、使用方法</a></li>
+  <li><a href="#installation" id="toc-installation" class="nav-link active" data-scroll-target="#installation">1. Installation</a></li>
+  <li><a href="#how-to-use-dconf-editor" id="toc-how-to-use-dconf-editor" class="nav-link" data-scroll-target="#how-to-use-dconf-editor">2. How to use dconf-editor</a></li>
   </ul>
 <div class="toc-actions"><ul class="collapse"><li><a href="https://github.com/guofeng-lin/guofeng-lin.github.io/edit/main/blog/linux_20201022_dconf_editor/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/guofeng-lin/guofeng-lin.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -166,7 +166,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">What Is DCONF-EDITOR?</h1>
+<h1 class="title">What is dconf-editor</h1>
   <div class="quarto-categories">
     <div class="quarto-category">Linux</div>
     <div class="quarto-category">Ubuntu</div>
@@ -204,27 +204,24 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>dconf-editor是一个非常简单易用的Ubuntu设置修改程序，它把大量的Ubuntu系统的设置可视化了。</p>
-<p>好处是显而易见的，以后想要修改一些设置的话就不用再百度搜索命令再手动输入，还担心命令是否有问题了（多么痛的领悟…）。</p>
-<section id="一安装方法" class="level2">
-<h2 class="anchored" data-anchor-id="一安装方法">一、安装方法</h2>
-<p>安装方法如下：</p>
+<p>dconf-editor is a very simple and easy-to-use Ubuntu settings editing program that visualizes a large number of Ubuntu system settings.</p>
+<p>The benefits are obvious: you no longer need to search for commands on Google and then manually type them in, worrying about whether the commands are correct.</p>
+<section id="installation" class="level2">
+<h2 class="anchored" data-anchor-id="installation">1. Installation</h2>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> sudo apt install dconf-editor</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>安装好之后打开也很方便：按下ALT+F2打开命令搜索框，输入dconf-editor即可。</p>
 </section>
-<section id="二使用方法" class="level2">
-<h2 class="anchored" data-anchor-id="二使用方法">二、使用方法</h2>
-<section id="案例一" class="level3">
-<h3 class="anchored" data-anchor-id="案例一">案例一</h3>
-<p>如果之前长期使用Mac或Windows的话，对Ubuntu 18.04桌面可能有些不适应，例如dock程序栏的show application按钮默认是放置在dock的末端。那么尤其是把dock防止在底部的时候，在屏幕右下才能找到这个遥远的show application。那么如何修改呢？</p>
-<p>方法如下：</p>
+<section id="how-to-use-dconf-editor" class="level2">
+<h2 class="anchored" data-anchor-id="how-to-use-dconf-editor">2. How to use dconf-editor</h2>
+<p>Once installed, it’s very easy to open: press ALT+F2 to open the command search box, and enter dconf-editor.</p>
+<p><strong>use case 1</strong></p>
+<p>If you’ve been using Mac or Windows for a long time, you might find the Ubuntu 18.04 desktop a bit unfamiliar. For example, the “Show Applications” button in the dock is located at the very end of the dock by default. This means that especially when the dock is placed at the bottom, you can only find this distant “Show Applications” button in the lower right corner of the screen. So how do you change it?</p>
 <ul>
-<li>第一步，打开dconf-editor；</li>
-<li>第二步，按照以下路径找到 <code>show-apps-at-top</code> 这个选项，然后设置为 <code>on</code>：</li>
+<li>Step 1: press ALT+F2 to open dconf-editor</li>
+<li>Step 2: locate the <code>show-apps-at-top</code> option in the following path <code>&gt; org &gt; gnome &gt; shell &gt; extension &gt; dash-to-dock</code></li>
+<li>Step 3: set <code>show-apps-at-top</code> to <code>on</code></li>
 </ul>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->

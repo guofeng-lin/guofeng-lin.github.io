@@ -1,5 +1,5 @@
 ---
-title: "How To Use Git?"
+title: "How to use git"
 description: |
   common usage of Git. 
 author: "Guofeng Lin"
@@ -14,122 +14,87 @@ format:
     code-tools: false
 ---
 
-
-# Git常见使用方法
-
-## 从本地仓库上传github的空仓库
-
-进入到想要同步的项目文件夹，按先后顺序执行以下操作：
+## View branches
 
 ```bash
-# 初始化
-git init
-# add要上传的文件
-git add <your file>
-# 在Bash环境中commit信息使用单引号，Windows的cmd中commit信息使用双引号
-git commit -m "your commit"
-# 将主分支的命名从master改为main
-git branch -M main
-# 创建在Github上的远程仓库
-git remote add origin https://github.com/account/project.git
-# 将main分支push到远程仓库
-git push -u origin main
-```
-
-## 查看Git的分支
-
-```bash
-# 查看项目远程地址
+# view remote address
 git remote -v
 
-# 查看远程项目的所有分支，红颜色分支代表当前所在的分支
+# View all branches and the red branch represents the current branch.
 git branch -a
 
-# 查看历史提交信息
+# view git log
 git log
 
-# 查看当前分支修改了哪些内容
+# check what changes have been made in the current branch.
 git status
 ```
 
-## 显示当前的配置信息
+## View git configuration
 
 ```bash
 git config --list
 ```
 
-## 查看标签信息
+## View tags
 
 ```bash
-# 获取标签信息
+# to fetch tags from a remote repository
 git fetch tags
 
-# 查看所有的标签
+# list all tags
 git tag -l
 
-# 切换到对应的标签
+# to switch your working derectory to the state of the repository at the time a specific tag was created
 git checkout [target_tag]
 
-# 查看当前标签以及分支修改情况
+# to display the current state of your repository's working directory and staging area.
 git status
 ```
 
-## git使用代理加速
-
-设置使用代理
-将你的proxy server地址代替以下的127.0.0.1
-
-* http类型代理
+## Push files to a remote repository
 
 ```bash
+# add the file to upload
+git add [your files]
+# wirte your commit message
+git commit -m [your commit]
+# push to the remote repository
+git push -u origin main
+```
+
+## Push to a new GitHub repository from local repository
+
+```bash
+# initialization
+git init
+# add the file to upload
+git add [your files]
+# wirte your commit message
+git commit -m [your commit]
+# change the branch from master to main (if needed)
+git branch -M main
+# create a remote repository on Github
+git remote add origin https://github.com/your_account/your_project.git
+# push to the remote repository
+git push -u origin main
+```
+
+## Use proxy
+
+```bash
+# to set http proxy
 git config --global http.proxy http://127.0.0.1:1080
+# to set https proxy
 git config --global https.proxy https://127.0.0.1:1080
-```
 
-socks5类型代理
-
-```bash
-git config --global http.proxy ‘socks5://127.0.0.1:1080’
-git config --global https.proxy ‘socks5://127.0.0.1:1080’
-```
-
-p.s. 亲测发现本地配置http类型代理生效，配置socks5类型代理没有用。
-
-查看当前的代理配置
-
-```bash
+# view http proxy configuration
 git config --global --get http.proxy
+# view https proxy configuration
 git config --global --get https.proxy
-```
 
-取消设置代理
-
-```bash
+# to unset http proxy
 git config --global --unset http.proxy
+# to unset https proxy
 git config --global --unset https.proxy
-```
-
-仅对github.com
-
-```bash
-git config --global http.https://github.com.proxy socks5://127.0.0.1:1080
-```
-
-取消代理
-
-```bash
-git config --global --unset http.https://github.com.proxy
-```
-
-设置使用需账户密码验证的代理
-http类型代理
-
-```bash
-git config --global http.proxy http://username:passwd@127.0.0.1:1080
-```
-
-socks5类型代理
-
-```bash
-git config --global http.proxy socks5://username:passwd@127.0.0.1:1080
 ```
