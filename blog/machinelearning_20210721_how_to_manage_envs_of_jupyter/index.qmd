@@ -14,7 +14,9 @@ format:
     code-tools: false
 ---
 
-## Step 1: install ipykernel in your envs
+## How to add an env in Jupyter
+
+### Step 1: install ipykernel in your envs
 
 **one way is to install ipykernel when you create a new env**
 
@@ -42,7 +44,7 @@ source activate existed_env
 conda install -n existed_env ipykernel
 ```
 
-## Step 2: config your env in Jupyter kernel
+### Step 2: config your env in Jupyter kernel
 
 ```bash
 source activate [your_env_name]
@@ -55,17 +57,16 @@ source activate new_env
 python -m ipykernel install --user --name new_env --display-name "new_env"
 ```
 
-# How to Delete Env in Jupyter?
+## How to Delete Env in Jupyter?
 
-## Step 1: check Jupyter kernel
+### Step 1: check Jupyter kernel
 
 ```bash
 jupyter kernelspec list
 ```
 
-## Step 2: delete the specific kernel
+### Step 2: delete the specific kernel
 
 ```bash
 jupyter kernelspec uninstall [your_env_name]
 ```
-

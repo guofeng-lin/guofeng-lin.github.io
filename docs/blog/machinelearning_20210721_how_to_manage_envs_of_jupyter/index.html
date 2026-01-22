@@ -156,13 +156,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul class="collapse">
-  <li><a href="#step-1-install-ipykernel-in-your-envs" id="toc-step-1-install-ipykernel-in-your-envs" class="nav-link active" data-scroll-target="#step-1-install-ipykernel-in-your-envs">Step 1: install ipykernel in your envs</a></li>
-  <li><a href="#step-2-config-your-env-in-jupyter-kernel" id="toc-step-2-config-your-env-in-jupyter-kernel" class="nav-link" data-scroll-target="#step-2-config-your-env-in-jupyter-kernel">Step 2: config your env in Jupyter kernel</a></li>
-  <li><a href="#how-to-delete-env-in-jupyter" id="toc-how-to-delete-env-in-jupyter" class="nav-link" data-scroll-target="#how-to-delete-env-in-jupyter">How to Delete Env in Jupyter?</a>
-  <ul class="collapse">
-  <li><a href="#step-1-check-jupyter-kernel" id="toc-step-1-check-jupyter-kernel" class="nav-link" data-scroll-target="#step-1-check-jupyter-kernel">Step 1: check Jupyter kernel</a></li>
-  <li><a href="#step-2-delete-the-specific-kernel" id="toc-step-2-delete-the-specific-kernel" class="nav-link" data-scroll-target="#step-2-delete-the-specific-kernel">Step 2: delete the specific kernel</a></li>
-  </ul></li>
+  <li><a href="#how-to-add-an-env-in-jupyter" id="toc-how-to-add-an-env-in-jupyter" class="nav-link active" data-scroll-target="#how-to-add-an-env-in-jupyter">How to add an env in Jupyter</a></li>
+  <li><a href="#how-to-delete-env-in-jupyter" id="toc-how-to-delete-env-in-jupyter" class="nav-link" data-scroll-target="#how-to-delete-env-in-jupyter">How to Delete Env in Jupyter?</a></li>
   </ul>
 <div class="toc-actions"><ul class="collapse"><li><a href="https://github.com/guofeng-lin/guofeng-lin.github.io/edit/main/blog/machinelearning_20210721_how_to_manage_envs_of_jupyter/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/guofeng-lin/guofeng-lin.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -209,8 +204,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="step-1-install-ipykernel-in-your-envs" class="level2">
-<h2 class="anchored" data-anchor-id="step-1-install-ipykernel-in-your-envs">Step 1: install ipykernel in your envs</h2>
+<section id="how-to-add-an-env-in-jupyter" class="level2">
+<h2 class="anchored" data-anchor-id="how-to-add-an-env-in-jupyter">How to add an env in Jupyter</h2>
+<section id="step-1-install-ipykernel-in-your-envs" class="level3">
+<h3 class="anchored" data-anchor-id="step-1-install-ipykernel-in-your-envs">Step 1: install ipykernel in your envs</h3>
 <p><strong>one way is to install ipykernel when you create a new env</strong></p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> create <span class="at">-n</span> <span class="pp">[</span><span class="ss">your_env_name</span><span class="pp">]</span> python=<span class="dt">\[</span>python_version_you_want<span class="dt">\]</span> ipykernel</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>for example：</p>
@@ -222,22 +219,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="bu">source</span> activate existed_env</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> install <span class="at">-n</span> existed_env ipykernel</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
-<section id="step-2-config-your-env-in-jupyter-kernel" class="level2">
-<h2 class="anchored" data-anchor-id="step-2-config-your-env-in-jupyter-kernel">Step 2: config your env in Jupyter kernel</h2>
+<section id="step-2-config-your-env-in-jupyter-kernel" class="level3">
+<h3 class="anchored" data-anchor-id="step-2-config-your-env-in-jupyter-kernel">Step 2: config your env in Jupyter kernel</h3>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="bu">source</span> activate <span class="pp">[</span><span class="ss">your_env_name</span><span class="pp">]</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> <span class="at">-m</span> ipykernel install <span class="at">--user</span> <span class="at">--name</span> <span class="pp">[</span><span class="ss">your_env_name</span><span class="pp">]</span> <span class="at">--display-name</span> <span class="pp">[</span><span class="ss">display_name</span><span class="pp">]</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>for example, if you want to config new_env to Jupyter kernel:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="bu">source</span> activate new_env</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> <span class="at">-m</span> ipykernel install <span class="at">--user</span> <span class="at">--name</span> new_env <span class="at">--display-name</span> <span class="st">"new_env"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
-<section id="how-to-delete-env-in-jupyter" class="level1">
-<h1>How to Delete Env in Jupyter?</h1>
-<section id="step-1-check-jupyter-kernel" class="level2">
-<h2 class="anchored" data-anchor-id="step-1-check-jupyter-kernel">Step 1: check Jupyter kernel</h2>
+</section>
+<section id="how-to-delete-env-in-jupyter" class="level2">
+<h2 class="anchored" data-anchor-id="how-to-delete-env-in-jupyter">How to Delete Env in Jupyter?</h2>
+<section id="step-1-check-jupyter-kernel" class="level3">
+<h3 class="anchored" data-anchor-id="step-1-check-jupyter-kernel">Step 1: check Jupyter kernel</h3>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">jupyter</span> kernelspec list</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
-<section id="step-2-delete-the-specific-kernel" class="level2">
-<h2 class="anchored" data-anchor-id="step-2-delete-the-specific-kernel">Step 2: delete the specific kernel</h2>
+<section id="step-2-delete-the-specific-kernel" class="level3">
+<h3 class="anchored" data-anchor-id="step-2-delete-the-specific-kernel">Step 2: delete the specific kernel</h3>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">jupyter</span> kernelspec uninstall <span class="pp">[</span><span class="ss">your_env_name</span><span class="pp">]</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 
 

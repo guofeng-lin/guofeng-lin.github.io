@@ -221,35 +221,21 @@
     "href": "blog/machinelearning_20210721_how_to_manage_envs_of_jupyter/index.html",
     "title": "How to manage your envs in jupyter",
     "section": "",
-    "text": "one way is to install ipykernel when you create a new env\nconda create -n [your_env_name] python=\\[python_version_you_want\\] ipykernel\nfor example：\nconda create -n test_env python=3.6 ipykernel\nanother way is to install ipykernel in existing env\nsource activate [your_env_name]\nconda install -n [your_env_name] ipykernel\nfor example：\nsource activate existed_env\nconda install -n existed_env ipykernel"
+    "text": "one way is to install ipykernel when you create a new env\nconda create -n [your_env_name] python=\\[python_version_you_want\\] ipykernel\nfor example：\nconda create -n test_env python=3.6 ipykernel\nanother way is to install ipykernel in existing env\nsource activate [your_env_name]\nconda install -n [your_env_name] ipykernel\nfor example：\nsource activate existed_env\nconda install -n existed_env ipykernel\n\n\n\nsource activate [your_env_name]\npython -m ipykernel install --user --name [your_env_name] --display-name [display_name]\nfor example, if you want to config new_env to Jupyter kernel:\nsource activate new_env\npython -m ipykernel install --user --name new_env --display-name \"new_env\""
   },
   {
-    "objectID": "blog/machinelearning_20210721_how_to_manage_envs_of_jupyter/index.html#step-1-install-ipykernel-in-your-envs",
-    "href": "blog/machinelearning_20210721_how_to_manage_envs_of_jupyter/index.html#step-1-install-ipykernel-in-your-envs",
+    "objectID": "blog/machinelearning_20210721_how_to_manage_envs_of_jupyter/index.html#how-to-add-an-env-in-jupyter",
+    "href": "blog/machinelearning_20210721_how_to_manage_envs_of_jupyter/index.html#how-to-add-an-env-in-jupyter",
     "title": "How to manage your envs in jupyter",
     "section": "",
-    "text": "one way is to install ipykernel when you create a new env\nconda create -n [your_env_name] python=\\[python_version_you_want\\] ipykernel\nfor example：\nconda create -n test_env python=3.6 ipykernel\nanother way is to install ipykernel in existing env\nsource activate [your_env_name]\nconda install -n [your_env_name] ipykernel\nfor example：\nsource activate existed_env\nconda install -n existed_env ipykernel"
+    "text": "one way is to install ipykernel when you create a new env\nconda create -n [your_env_name] python=\\[python_version_you_want\\] ipykernel\nfor example：\nconda create -n test_env python=3.6 ipykernel\nanother way is to install ipykernel in existing env\nsource activate [your_env_name]\nconda install -n [your_env_name] ipykernel\nfor example：\nsource activate existed_env\nconda install -n existed_env ipykernel\n\n\n\nsource activate [your_env_name]\npython -m ipykernel install --user --name [your_env_name] --display-name [display_name]\nfor example, if you want to config new_env to Jupyter kernel:\nsource activate new_env\npython -m ipykernel install --user --name new_env --display-name \"new_env\""
   },
   {
-    "objectID": "blog/machinelearning_20210721_how_to_manage_envs_of_jupyter/index.html#step-2-config-your-env-in-jupyter-kernel",
-    "href": "blog/machinelearning_20210721_how_to_manage_envs_of_jupyter/index.html#step-2-config-your-env-in-jupyter-kernel",
+    "objectID": "blog/machinelearning_20210721_how_to_manage_envs_of_jupyter/index.html#how-to-delete-env-in-jupyter",
+    "href": "blog/machinelearning_20210721_how_to_manage_envs_of_jupyter/index.html#how-to-delete-env-in-jupyter",
     "title": "How to manage your envs in jupyter",
-    "section": "Step 2: config your env in Jupyter kernel",
-    "text": "Step 2: config your env in Jupyter kernel\nsource activate [your_env_name]\npython -m ipykernel install --user --name [your_env_name] --display-name [display_name]\nfor example, if you want to config new_env to Jupyter kernel:\nsource activate new_env\npython -m ipykernel install --user --name new_env --display-name \"new_env\""
-  },
-  {
-    "objectID": "blog/machinelearning_20210721_how_to_manage_envs_of_jupyter/index.html#step-1-check-jupyter-kernel",
-    "href": "blog/machinelearning_20210721_how_to_manage_envs_of_jupyter/index.html#step-1-check-jupyter-kernel",
-    "title": "How to manage your envs in jupyter",
-    "section": "Step 1: check Jupyter kernel",
-    "text": "Step 1: check Jupyter kernel\njupyter kernelspec list"
-  },
-  {
-    "objectID": "blog/machinelearning_20210721_how_to_manage_envs_of_jupyter/index.html#step-2-delete-the-specific-kernel",
-    "href": "blog/machinelearning_20210721_how_to_manage_envs_of_jupyter/index.html#step-2-delete-the-specific-kernel",
-    "title": "How to manage your envs in jupyter",
-    "section": "Step 2: delete the specific kernel",
-    "text": "Step 2: delete the specific kernel\njupyter kernelspec uninstall [your_env_name]"
+    "section": "How to Delete Env in Jupyter?",
+    "text": "How to Delete Env in Jupyter?\n\nStep 1: check Jupyter kernel\njupyter kernelspec list\n\n\nStep 2: delete the specific kernel\njupyter kernelspec uninstall [your_env_name]"
   },
   {
     "objectID": "dev/short_bio.html",
