@@ -5,25 +5,25 @@ title: "Publications"
 
 ### Journal Papers
 
-- **Z.Gu, C.Zhou, and G.Lin, "A temporal shift reconstruction network for compressive video sensing", IET Computer Vision, 18.4 (2024): 448-457, 2024.**
+- **Zhao, Shubin, Gang Chen, Xuan Lu, Guofeng Lin, Xianfeng Cheng, Qiuxiang Wu, Chao Chen, Jing Tao, and Yihui Zhu.**. "XAI-Supported Dynamics of Civil Aircraft Trajectory: Energy Conservation in Point-Mass Modeling with Comparative Analysis." *Journal of Engineering*. In press.
 
-- **G.Lin, L.Zhan, and D.Shen, "Review on Intelligent Operation and Maintenance of Air Traffic Control Automation Systems", Journal of Xihua University, 41(2):20-26, 2022.**
+- **Gu, Zhenfei, Chao Zhou, and Guofeng Lin.**. "A Temporal Shift Reconstruction Network for Compressive Video Sensing." *IET Computer Vision* 18, no. 4 (Setptember 9, 2023): 448–57. [https://doi.org/10.1049/cvi2.12234](https://doi.org/10.1049/cvi2.12234)
 
-- **G.Lin, Y.Xia, C.Ying, et.al,"F2P-ABS:A Fast and Secure Attribute-Based Signature for MobilePlatform s",Security and Communication Networks,2019:1-12,2022.**
+- **Lin, Guofeng, Lingli Zhan, and Deren Shen.** "Review on Intelligent Operation and Maintenance of Air Traffic Control Automation Systems." *Journal of Xihua University* 41, no. 2 (2022): 20–26. [https://doi.org/10.12198/j.issn.1673-159X.4126](https://doi.org/10.12198/j.issn.1673-159X.4126)
 
-- **G.Lin, L.You, B.Hu, et.al, “A Coordinated ciphertext policy attribute-based PHR access control with user accountability”, KSII Transactions on Internet & Information Systems,12(4), pp.1832-1853, 2018.**
+- **Lin, Guofeng, Yunhao Xia, Chun Ying, and Zhixin Sun.** "F2P-ABS: A Fast and Secure Attribute-Based Signature for Mobile Platforms." *Security and Communication Networks* 2019 (December 19, 2019): 1-12. [https://doi.org/10.1155/2019/5380710](https://doi.org/10.1155/2019/5380710)
 
-- **G.Lin, H.Hong, and Z.Sun, “A Collaborative Key Management Protocol in Ciphertext Policy Attribute-Based Encryption for Cloud Data Sharing”, IEEE Access, 5, pp. 9464-9475, 2017.**
+- **Lin, Guofeng, Lirong You, Bing Hu, and Zhixin Sun.** "A Coordinated Ciphertext Policy Attribute-Based PHR Access Control with User Accountability." *KSII Transactions on Internet & Information Systems* 12, no. 4 (April 30, 2018): 1832–53. [https://doi.org/10.3837/tiis.2018.04.024](https://doi.org/10.3837/tiis.2018.04.024)
 
-- **J.Xu, H.Hong, G.Lin, et.al, "A new inter-domain information sharing smart system based on ABSES in SDN", IEEE Access, 6, pp.12790-12799, 2018.**
+- **Lin, Guofeng, Hanshu Hong, and Zhixin Sun.** 2018b. "A Collaborative Key Management Protocol in Ciphertext Policy Attribute-Based Encryption for Cloud Data Sharing." *IEEE Access* 5 (May 23, 2017): 9464–75. [http://doi.org/10.1109/ACCESS.2017.2707126](http://doi.org/10.1109/ACCESS.2017.2707126)
 
-- **Y.Xia, H.Hong, G.Lin, et.al, "A secure and efficient cloud resource allocation scheme with trust evaluation mechanism based on combination double auction", KSII Transactions on Internet & Information Systems, 11(9), pp.4197-4219, 2017.**
+- **Xu, Jinjin, Hanshu Hong, Guofeng Lin, and Zhixin Sun.** "A New Inter-Domain Information Sharing Smart System Based on ABSES in SDN." *IEEE Access* 6 (January 2, 2018): 12790–99. [http://doi.org/10.1109/ACCESS.2017.2788443](http://doi.org/10.1109/ACCESS.2017.2788443)
+
+- **Xia, Yunhao, Hanshu Hong, Guofeng Lin, and Zhixin Sun.** "A Secure and Efficient Cloud Resource Allocation Scheme with Trust Evaluation Mechanism Based on Combination Double Auction." *KSII Transactions on Internet & Information Systems* 11, no. 9 (September 30, 2017): 4197–219. [https://doi.org/10.3837/tiis.2017.09.002](https://doi.org/10.3837/tiis.2017.09.002)
 
 ### Conference Papers
-- **L.Zhou, H.Zhang, G.Lin, et.al, "The Improvement of Air Traffic Control Automation System:Exploration and Application of Decentralized Multi-Level Architecture", in Proc.2023 IEEE 5thInternational Conference on Civil Aviation Safety and Information Technology, 2023, pp.486-493.**
+- **Zhou, Luhua, Hanwen Zhang, Guofeng Lin, Yun Wang, and Wei Qi.** 2023. "The Improvement of Air Traffic Control Automation System: Exploration and Application of Decentralized Multi-Level Architecture." In *2023 IEEE 5th International Conference on Civil Aviation Safety and Information Technology (ICCASIT)*, Dali, China, October 11-13, 2023, pp.486–93. [http://doi.org/10.1109/ICCASIT58768.2023.10351716](http://doi.org/10.1109/ICCASIT58768.2023.10351716)
 
-- **G.Lin, C.Ying, S.Tan, et.al, "ARP-CP-ABE: toward efficient, secure, and flexible access control for personal health record systems", in Proc. 4th IEEE Cyber Science and Technology Congress, 2018, pp.54-61.**
+- **Lin, Guofeng, Chun Ying, Shuhua Tan, Yunhao Xia, and Zhixin Sun.** 2018c. "ARP-CP-ABE: Toward Efficient, Secure, and Flexible Access Control for Personal Health Record Systems." In *The 4th International Conference on Big Data Intelligence and Computing and Cyber Science and Technology*, Athens, Greece, August 12-15, 2018, pp.54–61. [http://doi.org/10.1109/DASC/PiCom/DataCom/CyberSciTec.2018.00024](http://doi.org/10.1109/DASC/PiCom/DataCom/CyberSciTec.2018.00024)
 
-- **G.Lin, H.Hong, Y.Xia, et.al, “An Expressive, Lightweight and Secure Construction of Key Policy Attribute-Based Cloud Data Sharing Access Control”, in Proc. 2017 International Conference on Cloud Technology and Communication Engineering, 2017, pp.66-73.**
-
-
+- **Lin, Guofeng, Hanshu Hong, Yunhao Xia, and Zhixin Sun.** "An Expressive, Lightweight and Secure Construction of Key Policy Attribute-Based Cloud Data Sharing Access Control." In *The 2017 International Conference on Cloud Technology and Communication Engineering*, Guilin, China, August 18-20, 2017, pp.1-9. [https://doi.org/10.1088/1742-6596/910/1/012010](https://doi.org/10.1088/1742-6596/910/1/012010)
