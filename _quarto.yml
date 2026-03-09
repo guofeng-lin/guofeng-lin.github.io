@@ -17,7 +17,6 @@ website:
         href: https://github.com/guofeng-lin/guofeng-lin.github.io
 
   navbar: 
-    background: "#A9CCE3"
     search: true
     right: 
       - text: "Publications"
@@ -36,5 +35,6 @@ website:
 format:
   html:
     theme: styles.scss
+    include-after-body: cursor.html
 
 

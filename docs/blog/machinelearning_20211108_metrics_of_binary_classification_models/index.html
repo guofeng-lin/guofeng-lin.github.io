@@ -41,10 +41,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-2655609e4c4ce2e7dd4199da68fd4791.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-98df11abc691db5dc6eb0ed4c8f56cd5.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-1eda2c3b874d6171aabb59e00212fdf7.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -241,6 +241,33 @@ recall=\frac{TP}{TP+FN}
 </section>
 
 </main> <!-- /main -->
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  // Create the glow element
+  const glow = document.createElement("div");
+  glow.id = "cursor-glow";
+  document.body.appendChild(glow);
+
+  // Default positioning
+  let mouseX = window.innerWidth / 2;
+  let mouseY = window.innerHeight / 2;
+
+  // Track mouse
+  document.addEventListener("mousemove", (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+  });
+
+  // Use requestAnimationFrame for smoother performance
+  const updateGlow = () => {
+    glow.style.transform = `translate(${mouseX}px, ${mouseY}px)`;
+    requestAnimationFrame(updateGlow);
+  };
+  
+  // Start animation loop
+  requestAnimationFrame(updateGlow);
+});
+</script>
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";

@@ -9,7 +9,7 @@ title: "Publications"
 
 - **Gu, Zhenfei, Chao Zhou, and Guofeng Lin.**. "A Temporal Shift Reconstruction Network for Compressive Video Sensing." *IET Computer Vision* 18, no. 4 (Setptember 9, 2023): 448–57. [https://doi.org/10.1049/cvi2.12234](https://doi.org/10.1049/cvi2.12234)
 
-- **Lin, Guofeng, Lingli Zhan, and Deren Shen.** "Review on Intelligent Operation and Maintenance of Air Traffic Control Automation Systems." *Journal of Xihua University* 41, no. 2 (2022): 20–26. [https://doi.org/10.12198/j.issn.1673-159X.4126](https://doi.org/10.12198/j.issn.1673-159X.4126)
+- **Lin, Guofeng, Lingli Zhan, and Deren Shen.** "Review on Intelligent Operation and Maintenance of Air Traffic Control Automation Systems." *Journal of Xihua University* 41, no. 2 (March 1, 2022): 20–26. [https://doi.org/10.12198/j.issn.1673-159X.4126](https://doi.org/10.12198/j.issn.1673-159X.4126)
 
 - **Lin, Guofeng, Yunhao Xia, Chun Ying, and Zhixin Sun.** "F2P-ABS: A Fast and Secure Attribute-Based Signature for Mobile Platforms." *Security and Communication Networks* 2019 (December 19, 2019): 1-12. [https://doi.org/10.1155/2019/5380710](https://doi.org/10.1155/2019/5380710)
 
