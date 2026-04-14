@@ -5,9 +5,11 @@ title: "Publications"
 
 ### Journal Papers
 
-- **Zhao, Shubin, Gang Chen, Xuan Lu, Guofeng Lin, Xianfeng Cheng, Qiuxiang Wu, Chao Chen, Jing Tao, and Yihui Zhu.**. "XAI-Supported Dynamics of Civil Aircraft Trajectory: Energy Conservation in Point-Mass Modeling with Comparative Analysis." *Journal of Engineering*. In press.
+- **Zhao, Shubin, Gang Chen, Xuan Lu, Guofeng Lin, Xianfeng Cheng, Qiuxiang Wu, Chao Chen, Jing Tao, and Yihui Zhu.** "XAI-Supported Dynamics of Civil Aircraft Trajectory: Energy Conservation in Point-Mass Modeling with Comparative Analysis." *Journal of Engineering* 2026 (March 11, 2026):7543833. [https://doi.org/10.1155/je/7543833](https://doi.org/10.1155/je/7543833)
 
-- **Gu, Zhenfei, Chao Zhou, and Guofeng Lin.**. "A Temporal Shift Reconstruction Network for Compressive Video Sensing." *IET Computer Vision* 18, no. 4 (Setptember 9, 2023): 448–57. [https://doi.org/10.1049/cvi2.12234](https://doi.org/10.1049/cvi2.12234)
+- **Wang, Shuwang, Guofeng Lin, Xinxin Ye, Yan Huang, Shumei Zhu, Wanyi Yi, Qiong Wang, and Jun Wang.** "Toward Efficient Cloud Data Sharing A Pairing-Free ABE Scheme with Redefinable Weighted Access Policy." *Applied Science* 16, no. 5 (March 5, 2026): 2509. [https://doi.org/10.3390/app16052509](https://doi.org/10.3390/app16052509)
+
+- **Gu, Zhenfei, Chao Zhou, and Guofeng Lin.** "A Temporal Shift Reconstruction Network for Compressive Video Sensing." *IET Computer Vision* 18, no. 4 (Setptember 9, 2023): 448–57. [https://doi.org/10.1049/cvi2.12234](https://doi.org/10.1049/cvi2.12234)
 
 - **Lin, Guofeng, Lingli Zhan, and Deren Shen.** "Review on Intelligent Operation and Maintenance of Air Traffic Control Automation Systems." *Journal of Xihua University* 41, no. 2 (March 1, 2022): 20–26. [https://doi.org/10.12198/j.issn.1673-159X.4126](https://doi.org/10.12198/j.issn.1673-159X.4126)
 
@@ -15,7 +17,7 @@ title: "Publications"
 
 - **Lin, Guofeng, Lirong You, Bing Hu, and Zhixin Sun.** "A Coordinated Ciphertext Policy Attribute-Based PHR Access Control with User Accountability." *KSII Transactions on Internet & Information Systems* 12, no. 4 (April 30, 2018): 1832–53. [https://doi.org/10.3837/tiis.2018.04.024](https://doi.org/10.3837/tiis.2018.04.024)
 
-- **Lin, Guofeng, Hanshu Hong, and Zhixin Sun.** 2018b. "A Collaborative Key Management Protocol in Ciphertext Policy Attribute-Based Encryption for Cloud Data Sharing." *IEEE Access* 5 (May 23, 2017): 9464–75. [http://doi.org/10.1109/ACCESS.2017.2707126](http://doi.org/10.1109/ACCESS.2017.2707126)
+- **Lin, Guofeng, Hanshu Hong, and Zhixin Sun.** "A Collaborative Key Management Protocol in Ciphertext Policy Attribute-Based Encryption for Cloud Data Sharing." *IEEE Access* 5 (May 23, 2017): 9464–75. [http://doi.org/10.1109/ACCESS.2017.2707126](http://doi.org/10.1109/ACCESS.2017.2707126)
 
 - **Xu, Jinjin, Hanshu Hong, Guofeng Lin, and Zhixin Sun.** "A New Inter-Domain Information Sharing Smart System Based on ABSES in SDN." *IEEE Access* 6 (January 2, 2018): 12790–99. [http://doi.org/10.1109/ACCESS.2017.2788443](http://doi.org/10.1109/ACCESS.2017.2788443)
 
