@@ -60,49 +60,70 @@
     "href": "blog/linux_20231121_how_to_use_git/index.html",
     "title": "How to use git",
     "section": "",
-    "text": "# view remote address\ngit remote -v\n\n# View all branches and the red branch represents the current branch.\ngit branch -a\n\n# view git log\ngit log\n\n# check what changes have been made in the current branch.\ngit status"
+    "text": "# Create a new local repository\ngit init\n\n# Clone a remote repository\ngit clone [repository-url]\n\n\n\n# Set global user information (do this once after installation)\ngit config --global user.name \"Your Name\"\ngit config --global user.email \"your.email@example.com\"\n\n# View all configuration\ngit config --list\n\n# View specific configuration\ngit config user.name\ngit config user.email"
   },
   {
-    "objectID": "blog/linux_20231121_how_to_use_git/index.html#view-branches",
-    "href": "blog/linux_20231121_how_to_use_git/index.html#view-branches",
+    "objectID": "blog/linux_20231121_how_to_use_git/index.html#basic-repository-setup",
+    "href": "blog/linux_20231121_how_to_use_git/index.html#basic-repository-setup",
     "title": "How to use git",
     "section": "",
-    "text": "# view remote address\ngit remote -v\n\n# View all branches and the red branch represents the current branch.\ngit branch -a\n\n# view git log\ngit log\n\n# check what changes have been made in the current branch.\ngit status"
+    "text": "# Create a new local repository\ngit init\n\n# Clone a remote repository\ngit clone [repository-url]\n\n\n\n# Set global user information (do this once after installation)\ngit config --global user.name \"Your Name\"\ngit config --global user.email \"your.email@example.com\"\n\n# View all configuration\ngit config --list\n\n# View specific configuration\ngit config user.name\ngit config user.email"
   },
   {
-    "objectID": "blog/linux_20231121_how_to_use_git/index.html#view-git-configuration",
-    "href": "blog/linux_20231121_how_to_use_git/index.html#view-git-configuration",
+    "objectID": "blog/linux_20231121_how_to_use_git/index.html#view-repository-status",
+    "href": "blog/linux_20231121_how_to_use_git/index.html#view-repository-status",
     "title": "How to use git",
-    "section": "View git configuration",
-    "text": "View git configuration\ngit config --list"
+    "section": "View Repository Status",
+    "text": "View Repository Status\n\nCheck branch and remote information\n# View remote repository addresses\ngit remote -v\n\n# View all branches (local and remote)\ngit branch -a\n\n# View only local branches\ngit branch\n\n# View only remote branches\ngit branch -r\n\n\nView commit history\n# View recent commits (last 10 by default)\ngit log\n\n# View compact one-line format\ngit log --oneline\n\n# View commit history with branch graph\ngit log --graph --oneline --all\n\n# View commits by a specific author\ngit log --author=\"name\"\n\n# View commits in a specific date range\ngit log --since=\"2023-01-01\" --until=\"2023-12-31\"\n\n\nCheck working directory status\n# View current status and changes\ngit status\n\n# View detailed status with short format\ngit status -s\n\n# View untracked files\ngit status -u\n\n\nView changes and differences\n# View changes not yet staged\ngit diff\n\n# View changes staged for commit\ngit diff --cached\n\n# View differences between branches\ngit diff branch1 branch2\n\n# View differences in a specific file\ngit diff file.txt"
   },
   {
-    "objectID": "blog/linux_20231121_how_to_use_git/index.html#view-tags",
-    "href": "blog/linux_20231121_how_to_use_git/index.html#view-tags",
+    "objectID": "blog/linux_20231121_how_to_use_git/index.html#working-with-tags",
+    "href": "blog/linux_20231121_how_to_use_git/index.html#working-with-tags",
     "title": "How to use git",
-    "section": "View tags",
-    "text": "View tags\n# to fetch tags from a remote repository\ngit fetch tags\n\n# list all tags\ngit tag -l\n\n# to switch your working derectory to the state of the repository at the time a specific tag was created\ngit checkout [target_tag]\n\n# to display the current state of your repository's working directory and staging area.\ngit status"
+    "section": "Working with Tags",
+    "text": "Working with Tags\n# Fetch tags from remote repository\ngit fetch --tags\n\n# List all tags\ngit tag -l\n\n# Create a lightweight tag\ngit tag v1.0.0\n\n# Create an annotated tag with message\ngit tag -a v1.0.0 -m \"Release version 1.0.0\"\n\n# View tag details\ngit show v1.0.0\n\n# Push a specific tag to remote\ngit push origin v1.0.0\n\n# Push all tags to remote\ngit push origin --tags\n\n# Delete a local tag\ngit tag -d v1.0.0\n\n# Delete a remote tag\ngit push origin --delete v1.0.0\n\n# Checkout a specific tag (detached HEAD state)\ngit checkout v1.0.0"
   },
   {
-    "objectID": "blog/linux_20231121_how_to_use_git/index.html#push-files-to-a-remote-repository",
-    "href": "blog/linux_20231121_how_to_use_git/index.html#push-files-to-a-remote-repository",
+    "objectID": "blog/linux_20231121_how_to_use_git/index.html#basic-workflow-add-commit-push",
+    "href": "blog/linux_20231121_how_to_use_git/index.html#basic-workflow-add-commit-push",
     "title": "How to use git",
-    "section": "Push files to a remote repository",
-    "text": "Push files to a remote repository\n# add the file to upload\ngit add [your files]\n# wirte your commit message\ngit commit -m [your commit]\n# push to the remote repository\ngit push -u origin main"
+    "section": "Basic Workflow: Add, Commit, Push",
+    "text": "Basic Workflow: Add, Commit, Push\n\nStage changes\n# Add a specific file to staging area\ngit add file.txt\n\n# Add all files to staging area\ngit add .\n\n# Add all modified files (excludes untracked)\ngit add -u\n\n# Interactive staging (select changes to add)\ngit add -p\n\n\nCommit changes\n# Create a commit with message\ngit commit -m \"feat: add new feature\"\n\n# Amend the last commit (if you forgot something)\ngit add forgotten-file.txt\ngit commit --amend -m \"Updated commit message\"\n\n# View commit history\ngit log --oneline\n\n\nPush to remote repository\n# Push to default branch\ngit push\n\n# Push to specific branch\ngit push origin main\n\n# Set upstream and push (first time)\ngit push -u origin main\n\n# Force push (use with caution on shared branches)\ngit push --force"
   },
   {
-    "objectID": "blog/linux_20231121_how_to_use_git/index.html#push-to-a-new-github-repository-from-local-repository",
-    "href": "blog/linux_20231121_how_to_use_git/index.html#push-to-a-new-github-repository-from-local-repository",
+    "objectID": "blog/linux_20231121_how_to_use_git/index.html#create-and-push-to-github",
+    "href": "blog/linux_20231121_how_to_use_git/index.html#create-and-push-to-github",
     "title": "How to use git",
-    "section": "Push to a new GitHub repository from local repository",
-    "text": "Push to a new GitHub repository from local repository\n# initialization\ngit init\n# add the file to upload\ngit add [your files]\n# wirte your commit message\ngit commit -m [your commit]\n# change the branch from master to main (if needed)\ngit branch -M main\n# create a remote repository on Github\ngit remote add origin https://github.com/your_account/your_project.git\n# push to the remote repository\ngit push -u origin main"
+    "section": "Create and Push to GitHub",
+    "text": "Create and Push to GitHub\n\nComplete workflow from scratch\n# 1. Initialize local repository\ngit init\n\n# 2. Add files to staging\ngit add .\n\n# 3. Create initial commit\ngit commit -m \"Initial commit\"\n\n# 4. Rename default branch to main (if needed)\ngit branch -M main\n\n# 5. Create a new repository on GitHub (via web interface)\n\n# 6. Add GitHub repository as remote\ngit remote add origin https://github.com/your_account/your_project.git\n\n# 7. Verify remote address\ngit remote -v\n\n# 8. Push to GitHub\ngit push -u origin main\n\n\nCommon remote operations\n# View remote URLs\ngit remote -v\n\n# Add a new remote repository\ngit remote add upstream [url]\n\n# Remove a remote repository\ngit remote remove upstream\n\n# Rename a remote\ngit remote rename origin upstream\n\n# Update remote URL\ngit remote set-url origin [new-url]"
+  },
+  {
+    "objectID": "blog/linux_20231121_how_to_use_git/index.html#synchronize-with-remote",
+    "href": "blog/linux_20231121_how_to_use_git/index.html#synchronize-with-remote",
+    "title": "How to use git",
+    "section": "Synchronize with Remote",
+    "text": "Synchronize with Remote\n\nPull changes from remote\n# Pull and merge changes from remote\ngit pull origin main\n\n# Pull with rebase (keeps linear history)\ngit pull --rebase origin main\n\n\nFetch without merging\n# Download changes without merging\ngit fetch origin\n\n# Fetch all remotes and branches\ngit fetch --all\n\n# View what would be pulled\ngit fetch origin\ngit log HEAD..origin/main"
   },
   {
     "objectID": "blog/linux_20231121_how_to_use_git/index.html#use-proxy",
     "href": "blog/linux_20231121_how_to_use_git/index.html#use-proxy",
     "title": "How to use git",
-    "section": "Use proxy",
-    "text": "Use proxy\n# to set http proxy\ngit config --global http.proxy http://127.0.0.1:1080\n# to set https proxy\ngit config --global https.proxy https://127.0.0.1:1080\n\n# view http proxy configuration\ngit config --global --get http.proxy\n# view https proxy configuration\ngit config --global --get https.proxy\n\n# to unset http proxy\ngit config --global --unset http.proxy\n# to unset https proxy\ngit config --global --unset https.proxy"
+    "section": "Use Proxy",
+    "text": "Use Proxy\n# Set HTTP proxy\ngit config --global http.proxy http://127.0.0.1:1080\n\n# Set HTTPS proxy\ngit config --global https.proxy https://127.0.0.1:1080\n\n# View HTTP proxy configuration\ngit config --global --get http.proxy\n\n# View HTTPS proxy configuration\ngit config --global --get https.proxy\n\n# Remove HTTP proxy\ngit config --global --unset http.proxy\n\n# Remove HTTPS proxy\ngit config --global --unset https.proxy"
+  },
+  {
+    "objectID": "blog/linux_20231121_how_to_use_git/index.html#team-collaboration",
+    "href": "blog/linux_20231121_how_to_use_git/index.html#team-collaboration",
+    "title": "How to use git",
+    "section": "Team Collaboration",
+    "text": "Team Collaboration\n\nBranch Management Strategy\nA common branch management strategy for team development:\nMain branches: - main / master - Production-ready code (protected) - develop - Integration branch for features\nSupporting branches: - feature/* - New features (e.g., feature/user-auth) - bugfix/* - Bug fixes on develop (e.g., bugfix/login-issue) - hotfix/* - Critical fixes on main (e.g., hotfix/critical-security) - release/* - Preparation for new releases\nTypical workflow:\n# 1. Create a new feature branch from develop\ngit checkout develop\ngit pull origin develop\ngit checkout -b feature/your-feature-name\n\n# 2. Work on your feature (make commits)\ngit add .\ngit commit -m \"feat: add user authentication\"\n\n# 3. Keep your branch in sync with develop\ngit checkout develop\ngit pull origin develop\ngit checkout feature/your-feature-name\ngit merge develop\n\n# 4. When done, push and create Pull Request\ngit push origin feature/your-feature-name\n# Then create PR on GitHub/GitLab to merge into develop\n\n\nCommit Message Convention\nFollow a consistent commit message format:\n&lt;type&gt;(&lt;scope&gt;): &lt;subject&gt;\n\n&lt;body&gt;\n\n&lt;footer&gt;\nTypes: - feat: New feature - fix: Bug fix - docs: Documentation changes - style: Code style changes (formatting, etc.) - refactor: Code refactoring - test: Test additions/changes - chore: Build process or auxiliary tool changes\nExamples:\n# Feature\ngit commit -m \"feat(auth): add OAuth2 login support\"\n\n# Bug fix\ngit commit -m \"fix(api): resolve null pointer in user service\"\n\n# Documentation\ngit commit -m \"docs(readme): update installation instructions\"\n\n# With body\ngit commit -m \"feat(payment): add WeChat Pay integration\n\n- Implement WeChat Pay API\n- Add payment callback handler\n- Update order status flow\"\n\n\nCode Review Process\nBefore submitting PR:\n# 1. Ensure your code is clean\ngit status\ngit diff\n\n# 2. Run tests locally\n# (your test commands here)\n\n# 3. Squash unnecessary commits (optional)\ngit rebase -i HEAD~3  # squash last 3 commits\nCreating Pull Request:\n\nPush your branch: git push origin feature/your-feature\nOpen PR on GitHub/GitLab\nFill in PR template with:\n\nDescription of changes\nRelated issue numbers\nTesting steps\nScreenshots (if UI changes)\n\n\nReviewing others’ code:\n# 1. Fetch the PR branch\ngit fetch origin\ngit checkout -b review/username/pr-branch origin/pr-branch\n\n# 2. Review locally\ngit log\ngit diff\n\n# 3. Run tests\n# (your test commands here)\n\n# 4. Leave comments on GitHub/GitLab\n# Approve or request changes"
+  },
+  {
+    "objectID": "blog/linux_20231121_how_to_use_git/index.html#conflict-resolution",
+    "href": "blog/linux_20231121_how_to_use_git/index.html#conflict-resolution",
+    "title": "How to use git",
+    "section": "Conflict Resolution",
+    "text": "Conflict Resolution\n\nUnderstanding Merge Conflicts\nConflicts occur when: - Two branches modify the same lines in the same file - Git cannot automatically determine which change to keep\nConflict markers in files:\n&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD\nyour changes\n=======\ntheir changes\n&gt;&gt;&gt;&gt;&gt;&gt;&gt; branch-name\n\n\nHandling Merge Conflicts\nStep-by-step process:\n# 1. Start merge\ngit checkout your-branch\ngit merge other-branch\n\n# Git will report conflict:\n# CONFLICT (content): Merge conflict in file.txt\n# Automatic merge failed; fix conflicts and then commit the result.\n\n# 2. Check status to see conflicted files\ngit status\n\n# 3. View the conflict in the file\n# Open file.txt and look for &lt;&lt;&lt;&lt;&lt;&lt;&lt;, =======, &gt;&gt;&gt;&gt;&gt;&gt;&gt; markers\n\n# 4. Edit the file to resolve conflicts\n# Remove markers and keep the correct code\n\n# 5. After fixing, mark as resolved\ngit add file.txt\n\n# 6. Complete the merge\ngit commit -m \"fix: resolve merge conflicts\"\n\n# 7. Push if needed\ngit push origin your-branch\n\n\nViewing Conflict Details\nBefore resolving:\n# See which files have conflicts\ngit status\n\n# View the diff with conflicts\ngit diff --name-only --diff-filter=U\n\n# View conflict markers in a specific file\ngit diff file.txt\nUsing tools:\n# Use built-in mergetool\ngit mergetool\n\n# Or use external tools\ngit config --global merge.tool vscode\ngit mergetool\n\n\nHow to Avoid Conflicts\nBest practices:\n\nPull frequently:\n\n# Before starting work\ngit pull origin main\n\n# During long tasks, sync regularly\ngit fetch origin\ngit rebase origin/main\n\nSmall, frequent commits:\n\n# Instead of one big commit\ngit commit -m \"feat: complete user module\"\n\n# Make small, focused commits\ngit commit -m \"feat(auth): add login endpoint\"\ngit commit -m \"feat(auth): add logout endpoint\"\ngit commit -m \"feat(auth): add password reset\"\n\nCommunicate with team:\n\n# Check who's working on what\ngit branch -a\n\n# Coordinate before making large changes\n# (use team chat, issue tracking, etc.)\n\nUse rebase for cleaner history:\n\n# Rebase your feature branch onto latest main\ngit checkout feature/your-feature\ngit fetch origin\ngit rebase origin/main\n\n# Resolve any conflicts that arise\ngit add .\ngit rebase --continue\n\nProtect main branch:\n\n# Enable branch protection on GitHub/GitLab:\n# - Require pull request reviews\n# - Require status checks to pass\n# - Prevent force pushes\n# - Require linear history (optional)"
   },
   {
     "objectID": "blog/linux_20201022_dconf_editor/index.html",

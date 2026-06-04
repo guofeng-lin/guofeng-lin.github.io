@@ -1,7 +1,7 @@
 ---
 title: "How to use git"
 description: |
-  common usage of Git. 
+  common usage of Git, including team collaboration and conflict resolution. 
 author: "Guofeng Lin"
 date: "2023-11-20"
 categories: [Git]
@@ -14,87 +14,549 @@ format:
     code-tools: false
 ---
 
-## View branches
+## Basic Repository Setup
+
+### Initialize a new repository
 
 ```bash
-# view remote address
+# Create a new local repository
+git init
+
+# Clone a remote repository
+git clone [repository-url]
+```
+
+### Configure Git
+
+```bash
+# Set global user information (do this once after installation)
+git config --global user.name "Your Name"
+git config --global user.email "your.email@example.com"
+
+# View all configuration
+git config --list
+
+# View specific configuration
+git config user.name
+git config user.email
+```
+
+---
+
+## View Repository Status
+
+### Check branch and remote information
+
+```bash
+# View remote repository addresses
 git remote -v
 
-# View all branches and the red branch represents the current branch.
+# View all branches (local and remote)
 git branch -a
 
-# view git log
+# View only local branches
+git branch
+
+# View only remote branches
+git branch -r
+```
+
+### View commit history
+
+```bash
+# View recent commits (last 10 by default)
 git log
 
-# check what changes have been made in the current branch.
+# View compact one-line format
+git log --oneline
+
+# View commit history with branch graph
+git log --graph --oneline --all
+
+# View commits by a specific author
+git log --author="name"
+
+# View commits in a specific date range
+git log --since="2023-01-01" --until="2023-12-31"
+```
+
+### Check working directory status
+
+```bash
+# View current status and changes
 git status
+
+# View detailed status with short format
+git status -s
+
+# View untracked files
+git status -u
 ```
 
-## View git configuration
+### View changes and differences
 
 ```bash
-git config --list
+# View changes not yet staged
+git diff
+
+# View changes staged for commit
+git diff --cached
+
+# View differences between branches
+git diff branch1 branch2
+
+# View differences in a specific file
+git diff file.txt
 ```
 
-## View tags
+---
+
+## Working with Tags
 
 ```bash
-# to fetch tags from a remote repository
-git fetch tags
+# Fetch tags from remote repository
+git fetch --tags
 
-# list all tags
+# List all tags
 git tag -l
 
-# to switch your working derectory to the state of the repository at the time a specific tag was created
-git checkout [target_tag]
+# Create a lightweight tag
+git tag v1.0.0
 
-# to display the current state of your repository's working directory and staging area.
-git status
+# Create an annotated tag with message
+git tag -a v1.0.0 -m "Release version 1.0.0"
+
+# View tag details
+git show v1.0.0
+
+# Push a specific tag to remote
+git push origin v1.0.0
+
+# Push all tags to remote
+git push origin --tags
+
+# Delete a local tag
+git tag -d v1.0.0
+
+# Delete a remote tag
+git push origin --delete v1.0.0
+
+# Checkout a specific tag (detached HEAD state)
+git checkout v1.0.0
 ```
 
-## Push files to a remote repository
+---
+
+## Basic Workflow: Add, Commit, Push
+
+### Stage changes
 
 ```bash
-# add the file to upload
-git add [your files]
-# wirte your commit message
-git commit -m [your commit]
-# push to the remote repository
+# Add a specific file to staging area
+git add file.txt
+
+# Add all files to staging area
+git add .
+
+# Add all modified files (excludes untracked)
+git add -u
+
+# Interactive staging (select changes to add)
+git add -p
+```
+
+### Commit changes
+
+```bash
+# Create a commit with message
+git commit -m "feat: add new feature"
+
+# Amend the last commit (if you forgot something)
+git add forgotten-file.txt
+git commit --amend -m "Updated commit message"
+
+# View commit history
+git log --oneline
+```
+
+### Push to remote repository
+
+```bash
+# Push to default branch
+git push
+
+# Push to specific branch
+git push origin main
+
+# Set upstream and push (first time)
 git push -u origin main
+
+# Force push (use with caution on shared branches)
+git push --force
 ```
 
-## Push to a new GitHub repository from local repository
+---
+
+## Create and Push to GitHub
+
+### Complete workflow from scratch
 
 ```bash
-# initialization
+# 1. Initialize local repository
 git init
-# add the file to upload
-git add [your files]
-# wirte your commit message
-git commit -m [your commit]
-# change the branch from master to main (if needed)
+
+# 2. Add files to staging
+git add .
+
+# 3. Create initial commit
+git commit -m "Initial commit"
+
+# 4. Rename default branch to main (if needed)
 git branch -M main
-# create a remote repository on Github
+
+# 5. Create a new repository on GitHub (via web interface)
+
+# 6. Add GitHub repository as remote
 git remote add origin https://github.com/your_account/your_project.git
-# push to the remote repository
+
+# 7. Verify remote address
+git remote -v
+
+# 8. Push to GitHub
 git push -u origin main
 ```
 
-## Use proxy
+### Common remote operations
 
 ```bash
-# to set http proxy
+# View remote URLs
+git remote -v
+
+# Add a new remote repository
+git remote add upstream [url]
+
+# Remove a remote repository
+git remote remove upstream
+
+# Rename a remote
+git remote rename origin upstream
+
+# Update remote URL
+git remote set-url origin [new-url]
+```
+
+---
+
+## Synchronize with Remote
+
+### Pull changes from remote
+
+```bash
+# Pull and merge changes from remote
+git pull origin main
+
+# Pull with rebase (keeps linear history)
+git pull --rebase origin main
+```
+
+### Fetch without merging
+
+```bash
+# Download changes without merging
+git fetch origin
+
+# Fetch all remotes and branches
+git fetch --all
+
+# View what would be pulled
+git fetch origin
+git log HEAD..origin/main
+```
+
+---
+
+## Use Proxy
+
+```bash
+# Set HTTP proxy
 git config --global http.proxy http://127.0.0.1:1080
-# to set https proxy
+
+# Set HTTPS proxy
 git config --global https.proxy https://127.0.0.1:1080
 
-# view http proxy configuration
+# View HTTP proxy configuration
 git config --global --get http.proxy
-# view https proxy configuration
+
+# View HTTPS proxy configuration
 git config --global --get https.proxy
 
-# to unset http proxy
+# Remove HTTP proxy
 git config --global --unset http.proxy
-# to unset https proxy
+
+# Remove HTTPS proxy
 git config --global --unset https.proxy
+```
+
+---
+
+## Team Collaboration
+
+### Branch Management Strategy
+
+A common branch management strategy for team development:
+
+**Main branches:**
+- `main` / `master` - Production-ready code (protected)
+- `develop` - Integration branch for features
+
+**Supporting branches:**
+- `feature/*` - New features (e.g., `feature/user-auth`)
+- `bugfix/*` - Bug fixes on develop (e.g., `bugfix/login-issue`)
+- `hotfix/*` - Critical fixes on main (e.g., `hotfix/critical-security`)
+- `release/*` - Preparation for new releases
+
+**Typical workflow:**
+
+```bash
+# 1. Create a new feature branch from develop
+git checkout develop
+git pull origin develop
+git checkout -b feature/your-feature-name
+
+# 2. Work on your feature (make commits)
+git add .
+git commit -m "feat: add user authentication"
+
+# 3. Keep your branch in sync with develop
+git checkout develop
+git pull origin develop
+git checkout feature/your-feature-name
+git merge develop
+
+# 4. When done, push and create Pull Request
+git push origin feature/your-feature-name
+# Then create PR on GitHub/GitLab to merge into develop
+```
+
+### Commit Message Convention
+
+Follow a consistent commit message format:
+
+```
+<type>(<scope>): <subject>
+
+<body>
+
+<footer>
+```
+
+**Types:**
+- `feat`: New feature
+- `fix`: Bug fix
+- `docs`: Documentation changes
+- `style`: Code style changes (formatting, etc.)
+- `refactor`: Code refactoring
+- `test`: Test additions/changes
+- `chore`: Build process or auxiliary tool changes
+
+**Examples:**
+
+```bash
+# Feature
+git commit -m "feat(auth): add OAuth2 login support"
+
+# Bug fix
+git commit -m "fix(api): resolve null pointer in user service"
+
+# Documentation
+git commit -m "docs(readme): update installation instructions"
+
+# With body
+git commit -m "feat(payment): add WeChat Pay integration
+
+- Implement WeChat Pay API
+- Add payment callback handler
+- Update order status flow"
+```
+
+### Code Review Process
+
+**Before submitting PR:**
+
+```bash
+# 1. Ensure your code is clean
+git status
+git diff
+
+# 2. Run tests locally
+# (your test commands here)
+
+# 3. Squash unnecessary commits (optional)
+git rebase -i HEAD~3  # squash last 3 commits
+```
+
+**Creating Pull Request:**
+
+1. Push your branch: `git push origin feature/your-feature`
+2. Open PR on GitHub/GitLab
+3. Fill in PR template with:
+   - Description of changes
+   - Related issue numbers
+   - Testing steps
+   - Screenshots (if UI changes)
+
+**Reviewing others' code:**
+
+```bash
+# 1. Fetch the PR branch
+git fetch origin
+git checkout -b review/username/pr-branch origin/pr-branch
+
+# 2. Review locally
+git log
+git diff
+
+# 3. Run tests
+# (your test commands here)
+
+# 4. Leave comments on GitHub/GitLab
+# Approve or request changes
+```
+
+---
+
+## Conflict Resolution
+
+### Understanding Merge Conflicts
+
+Conflicts occur when:
+- Two branches modify the same lines in the same file
+- Git cannot automatically determine which change to keep
+
+**Conflict markers in files:**
+
+```
+<<<<<<< HEAD
+your changes
+=======
+their changes
+>>>>>>> branch-name
+```
+
+### Handling Merge Conflicts
+
+**Step-by-step process:**
+
+```bash
+# 1. Start merge
+git checkout your-branch
+git merge other-branch
+
+# Git will report conflict:
+# CONFLICT (content): Merge conflict in file.txt
+# Automatic merge failed; fix conflicts and then commit the result.
+
+# 2. Check status to see conflicted files
+git status
+
+# 3. View the conflict in the file
+# Open file.txt and look for <<<<<<<, =======, >>>>>>> markers
+
+# 4. Edit the file to resolve conflicts
+# Remove markers and keep the correct code
+
+# 5. After fixing, mark as resolved
+git add file.txt
+
+# 6. Complete the merge
+git commit -m "fix: resolve merge conflicts"
+
+# 7. Push if needed
+git push origin your-branch
+```
+
+### Viewing Conflict Details
+
+**Before resolving:**
+
+```bash
+# See which files have conflicts
+git status
+
+# View the diff with conflicts
+git diff --name-only --diff-filter=U
+
+# View conflict markers in a specific file
+git diff file.txt
+```
+
+**Using tools:**
+
+```bash
+# Use built-in mergetool
+git mergetool
+
+# Or use external tools
+git config --global merge.tool vscode
+git mergetool
+```
+
+### How to Avoid Conflicts
+
+**Best practices:**
+
+1. **Pull frequently:**
+
+```bash
+# Before starting work
+git pull origin main
+
+# During long tasks, sync regularly
+git fetch origin
+git rebase origin/main
+```
+
+2. **Small, frequent commits:**
+
+```bash
+# Instead of one big commit
+git commit -m "feat: complete user module"
+
+# Make small, focused commits
+git commit -m "feat(auth): add login endpoint"
+git commit -m "feat(auth): add logout endpoint"
+git commit -m "feat(auth): add password reset"
+```
+
+3. **Communicate with team:**
+
+```bash
+# Check who's working on what
+git branch -a
+
+# Coordinate before making large changes
+# (use team chat, issue tracking, etc.)
+```
+
+4. **Use rebase for cleaner history:**
+
+```bash
+# Rebase your feature branch onto latest main
+git checkout feature/your-feature
+git fetch origin
+git rebase origin/main
+
+# Resolve any conflicts that arise
+git add .
+git rebase --continue
+```
+
+5. **Protect main branch:**
+
+```bash
+# Enable branch protection on GitHub/GitLab:
+# - Require pull request reviews
+# - Require status checks to pass
+# - Prevent force pushes
+# - Require linear history (optional)
 ```
